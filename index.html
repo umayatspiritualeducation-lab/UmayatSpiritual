@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umayat Spiritual Education Circle for Self Realization</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Philosopher:ital,wght@0,400;0,700;1,400&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black-earth:  #0d0b08;
+  --deep-soil:    #1a1409;
+  --ochre:        #c8822a;
+  --ochre-dim:    #8a5a1a;
+  --ochre-bright: #e8a840;
+  --nile:         #1a3a4a;
+  --nile-light:   #2a5a6a;
+  --papyrus:      #e8dcc0;
+  --papyrus-dim:  #b8a888;
+  --linen:        #f0e8d0;
+  --gold:         #c9a030;
+  --gold-bright:  #e8c060;
+  --copper:       #a06828;
+  --stone:        #3a3020;
+  --ink:          #1a1008;
+  --white-lotus:  #f8f0e0;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+body {
+  background: var(--black-earth);
+  color: var(--papyrus);
+  font-family: 'Philosopher', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.85;
+  overflow-x: hidden;
+}
+
+/* ── PAPYRUS TEXTURE ── */
+body::before {
+  content:'';
+  position:fixed;
+  inset:0;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(200,130,42,0.018) 3px,
+      rgba(200,130,42,0.018) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 5px,
+      rgba(200,130,42,0.012) 5px,
+      rgba(200,130,42,0.012) 6px
+    );
+  pointer-events:none;
+  z-index:0;
+}
+
+/* ── NAV ── */
+nav {
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:100;
+  background:rgba(13,11,8,0.96);
+  border-bottom:1px solid rgba(200,130,42,0.25);
+  padding:0.7rem 2rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  backdrop-filter:blur(10px);
+}
+.nav-brand {
+  font-family:'Cinzel',serif;
+  font-size:0.7rem;
+  letter-spacing:0.25em;
+  color:var(--gold);
+  text-transform:uppercase;
+}
+.nav-links {
+  display:flex;gap:2rem;list-style:none;
+}
+.nav-links a {
+  font-family:'Cinzel',serif;
+  font-size:0.6rem;
+  letter-spacing:0.2em;
+  color:var(--papyrus-dim);
+  text-decoration:none;
+  text-transform:uppercase;
+  transition:color 0.3s;
+}
+.nav-links a:hover{color:var(--ochre-bright);}
+@media(max-width:600px){.nav-links{display:none;}.nav-brand{font-size:0.6rem;}}
+
+/* ── HERO ── */
+#hero {
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:7rem 2rem 5rem;
+  overflow:hidden;
+  z-index:1;
+}
+
+/* Kemetic sun disk rising */
+.sun-disk {
+  position:absolute;
+  bottom:-30%;
+  left:50%;
+  transform:translateX(-50%);
+  width:700px;
+  height:700px;
+  border-radius:50%;
+  background:radial-gradient(circle at center,
+    rgba(200,130,42,0.12) 0%,
+    rgba(200,130,42,0.06) 40%,
+    transparent 70%);
+  pointer-events:none;
+  animation:rise 12s ease-in-out infinite;
+}
+@keyframes rise{
+  0%,100%{transform:translateX(-50%) translateY(0);opacity:0.6;}
+  50%{transform:translateX(-50%) translateY(-20px);opacity:1;}
+}
+
+/* Kemetic border decoration */
+.hero-frame {
+  position:absolute;
+  inset:80px 30px 30px;
+  border:1px solid rgba(200,130,42,0.12);
+  pointer-events:none;
+}
+.hero-frame::before,.hero-frame::after {
+  content:'';
+  position:absolute;
+  width:30px;height:30px;
+  border-color:var(--ochre-dim);
+  border-style:solid;
+}
+.hero-frame::before{top:-1px;left:-1px;border-width:2px 0 0 2px;}
+.hero-frame::after{bottom:-1px;right:-1px;border-width:0 2px 2px 0;}
+
+.ankh-glyph {
+  font-size:clamp(3rem,8vw,5.5rem);
+  color:transparent;
+  -webkit-text-stroke:1px rgba(200,130,42,0.4);
+  display:block;
+  margin-bottom:1.5rem;
+  animation:glow 5s ease-in-out infinite;
+  line-height:1;
+}
+@keyframes glow{
+  0%,100%{text-shadow:0 0 20px rgba(200,130,42,0.1);}
+  50%{text-shadow:0 0 40px rgba(200,130,42,0.3),0 0 80px rgba(200,130,42,0.1);}
+}
+@keyframes slowspin{
+  from{transform:translate(-50%,-50%) rotate(0deg);}
+  to{transform:translate(-50%,-50%) rotate(360deg);}
+}
+
+.hero-eyebrow {
+  font-family:'Cinzel',serif;
+  font-size:0.65rem;
+  letter-spacing:0.5em;
+  color:var(--ochre-dim);
+  text-transform:uppercase;
+  margin-bottom:1.2rem;
+  animation:fadeUp 2s ease both;
+}
+.hero-title {
+  font-family:'Uncial Antiqua',serif;
+  font-size:clamp(2rem,5.5vw,3.8rem);
+  color:var(--ochre-bright);
+  text-shadow:0 0 30px rgba(200,130,42,0.3);
+  line-height:1.2;
+  margin-bottom:0.6rem;
+  animation:fadeUp 2s 0.2s ease both;
+}
+.hero-subtitle {
+  font-family:'Cinzel',serif;
+  font-size:clamp(0.65rem,1.8vw,0.85rem);
+  letter-spacing:0.25em;
+  color:var(--papyrus-dim);
+  text-transform:uppercase;
+  margin-bottom:2.5rem;
+  animation:fadeUp 2s 0.4s ease both;
+}
+
+/* Kemetic divider */
+.kmt-rule {
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  justify-content:center;
+  margin:1.5rem auto;
+  width:280px;
+  animation:fadeUp 2s 0.6s ease both;
+}
+.kmt-rule-line{
+  flex:1;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--ochre-dim));
+}
+.kmt-rule-line.r{background:linear-gradient(90deg,var(--ochre-dim),transparent);}
+.kmt-rule-symbol{color:var(--gold);font-size:0.9rem;}
+
+.hero-tagline {
+  font-style:italic;
+  color:var(--papyrus-dim);
+  font-size:1.05rem;
+  max-width:560px;
+  animation:fadeUp 2s 0.8s ease both;
+  margin-bottom:3rem;
+}
+.hero-501 {
+  font-family:'Cinzel',serif;
+  font-size:0.6rem;
+  letter-spacing:0.4em;
+  color:var(--ochre-dim);
+  text-transform:uppercase;
+  animation:fadeUp 2s 1s ease both;
+}
+
+.hero-cta {
+  display:flex;
+  gap:1rem;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-top:2.5rem;
+  animation:fadeUp 2s 1.2s ease both;
+}
+.btn-primary,.btn-secondary {
+  font-family:'Cinzel',serif;
+  font-size:0.65rem;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+  padding:0.9rem 2rem;
+  text-decoration:none;
+  transition:all 0.3s;
+  cursor:pointer;
+  border:none;
+}
+.btn-primary {
+  background:var(--ochre);
+  color:var(--ink);
+  font-weight:700;
+}
+.btn-primary:hover{background:var(--ochre-bright);transform:translateY(-2px);}
+.btn-secondary {
+  background:transparent;
+  color:var(--ochre);
+  border:1px solid var(--ochre-dim);
+}
+.btn-secondary:hover{background:rgba(200,130,42,0.1);transform:translateY(-2px);}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(22px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* ── HIEROGLYPH BAND ── */
+.hiero-band {
+  position:relative;
+  z-index:1;
+  background:var(--stone);
+  border-top:1px solid rgba(200,130,42,0.2);
+  border-bottom:1px solid rgba(200,130,42,0.2);
+  padding:1rem 2rem;
+  text-align:center;
+  overflow:hidden;
+}
+.hiero-band-text {
+  font-family:'Cinzel',serif;
+  font-size:0.6rem;
+  letter-spacing:0.6em;
+  color:var(--ochre-dim);
+  text-transform:uppercase;
+}
+
+/* ── SECTIONS ── */
+section {
+  position:relative;
+  z-index:1;
+  padding:6rem 0;
+}
+.container {
+  max-width:860px;
+  margin:0 auto;
+  padding:0 2rem;
+}
+.section-eyebrow {
+  font-family:'Cinzel',serif;
+  font-size:0.6rem;
+  letter-spacing:0.5em;
+  color:var(--ochre-dim);
+  text-transform:uppercase;
+  display:block;
+  margin-bottom:0.6rem;
+}
+.section-title {
+  font-family:'Uncial Antiqua',serif;
+  font-size:clamp(1.4rem,3.5vw,2.2rem);
+  color:var(--ochre-bright);
+  margin-bottom:0.5rem;
+  line-height:1.2;
+}
+.ochre-rule {
+  width:70px;height:2px;
+  background:linear-gradient(90deg,var(--ochre),transparent);
+  margin:1rem 0 2rem;
+}
+
+p{margin-bottom:1.3rem;color:#c8b890;}
+
+/* ── MISSION / ABOUT ── */
+#mission {
+  background:var(--deep-soil);
+  border-top:1px solid rgba(200,130,42,0.1);
+}
+.mission-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4rem;
+  align-items:start;
+  margin-top:3rem;
+}
+@media(max-width:650px){.mission-grid{grid-template-columns:1fr;gap:2rem;}}
+
+.mission-pillar {
+  padding:2rem;
+  border:1px solid rgba(200,130,42,0.15);
+  background:rgba(0,0,0,0.3);
+  position:relative;
+}
+.mission-pillar::before {
+  content:'';
+  position:absolute;
+  top:0;left:0;
+  width:3px;height:40px;
+  background:var(--ochre-dim);
+}
+.pillar-glyph {
+  font-size:2rem;
+  margin-bottom:0.8rem;
+  display:block;
+  color:var(--gold);
+}
+.pillar-title {
+  font-family:'Cinzel',serif;
+  font-size:0.8rem;
+  letter-spacing:0.2em;
+  color:var(--ochre);
+  text-transform:uppercase;
+  margin-bottom:0.8rem;
+  display:block;
+}
+.pillar-body {
+  font-size:0.95rem;
+  color:#b8a880;
+  margin:0;
+}
+
+/* ── PRINCIPLES ── */
+.principles-list {
+  margin:2rem 0;
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+}
+.principle {
+  display:flex;
+  gap:1.5rem;
+  align-items:flex-start;
+  padding:1.2rem 1.5rem;
+  background:rgba(200,130,42,0.04);
+  border-left:2px solid var(--ochre-dim);
+}
+.principle-num {
+  font-family:'Cinzel',serif;
+  font-size:1.1rem;
+  color:var(--ochre-dim);
+  min-width:2rem;
+  line-height:1.5;
+}
+.principle-text {
+  font-size:0.95rem;
+  color:#c8b890;
+  margin:0;
+  line-height:1.7;
+}
+.principle-text strong{color:var(--ochre-bright);font-style:normal;}
+
+/* ── TEACHINGS ── */
+#teachings {
+  background:var(--black-earth);
+}
+.courses-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:1.5rem;
+  margin-top:3rem;
+}
+.course-card {
+  background:var(--deep-soil);
+  border:1px solid rgba(200,130,42,0.18);
+  padding:2rem 1.8rem;
+  transition:all 0.3s;
+  position:relative;
+  overflow:hidden;
+}
+.course-card::after {
+  content:'';
+  position:absolute;
+  bottom:0;left:0;right:0;
+  height:2px;
+  background:linear-gradient(90deg,var(--ochre),transparent);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform 0.4s;
+}
+.course-card:hover{transform:translateY(-4px);border-color:rgba(200,130,42,0.4);}
+.course-card:hover::after{transform:scaleX(1);}
+.course-icon {
+  font-size:2rem;
+  margin-bottom:1rem;
+  display:block;
+}
+.course-level {
+  font-family:'Cinzel',serif;
+  font-size:0.55rem;
+  letter-spacing:0.4em;
+  color:var(--ochre-dim);
+  text-transform:uppercase;
+  display:block;
+  margin-bottom:0.5rem;
+}
+.course-title {
+  font-family:'Philosopher',serif;
+  font-size:1.1rem;
+  color:var(--ochre-bright);
+  font-weight:700;
+  margin-bottom:0.8rem;
+  display:block;
+}
+.course-desc {
+  font-size:0.9rem;
+  color:#a89870;
+  margin:0;
+  line-height:1.6;
+}
+.course-link {
+  display:inline-block;
+  margin-top:1.2rem;
+  font-family:'Cinzel',serif;
+  font-size:0.6rem;
+  letter-spacing:0.2em;
+  color:var(--ochre);
+  text-decoration:none;
+  text-transform:uppercase;
+  border-bottom:1px solid var(--ochre-dim);
+  padding-bottom:2px;
+  transition:color 0.3s;
+}
+.course-link:hover{color:var(--ochre-bright);}
+
+/* ── COMMUNITY ── */
+#community {
+  background:var(--nile);
+  border-top:1px solid rgba(200,130,42,0.1);
+  border-bottom:1px solid rgba(200,130,42,0.1);
+}
+.community-inner {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4rem;
+  align-items:center;
+}
+@media(max-width:650px){.community-inner{grid-template-columns:1fr;gap:2rem;}}
+
+.community-quote {
+  padding:2.5rem;
+  background:rgba(0,0,0,0.3);
+  border-top:2px solid var(--ochre-dim);
+  position:relative;
+}
+.community-quote::before {
+  content:'\201C';
+  font-family:'Philosopher',serif;
+  font-size:5rem;
+  color:var(--ochre-dim);
+  position:absolute;
+  top:-1.5rem;
+  left:1.5rem;
+  line-height:1;
+  opacity:0.4;
+}
+.community-quote p {
+  font-style:italic;
+  font-size:1.1rem;
+  color:var(--linen);
+  margin-bottom:1rem;
+}
+.community-quote cite {
+  font-family:'Cinzel',serif;
+  font-size:0.6rem;
+  letter-spacing:0.3em;
+  color:var(--ochre-dim);
+  text-transform:uppercase;
+  font-style:normal;
+}
+.community-connect h3 {
+  font-family:'Cinzel',serif;
+  font-size:0.65rem;
+  letter-spacing:0.4em;
+  color:var(--ochre-dim);
+  text-transform:uppercase;
+  margin-bottom:1.5rem;
+}
+.connect-item {
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  padding:1rem 0;
+  border-bottom:1px solid rgba(200,130,42,0.1);
+  text-decoration:none;
+  transition:padding-left 0.3s;
+}
+.connect-item:hover{padding-left:0.5rem;}
+.connect-icon{font-size:1.3rem;min-width:2rem;}
+.connect-label {
+  font-family:'Cinzel',serif;
+  font-size:0.7rem;
+  letter-spacing:0.15em;
+  color:var(--papyrus);
+  text-transform:uppercase;
+  display:block;
+}
+.connect-sub {
+  font-size:0.8rem;
+  color:var(--papyrus-dim);
+  font-style:italic;
+}
+
+/* ── DONATE ── */
+#donate {
+  background:var(--deep-soil);
+  text-align:center;
+}
+.donate-inner {
+  max-width:680px;
+  margin:0 auto;
+}
+.donate-503 {
+  font-family:'Cinzel',serif;
+  font-size:0.6rem;
+  letter-spacing:0.4em;
+  color:var(--ochre-dim);
+  text-transform:uppercase;
+  display:block;
+  margin-bottom:3rem;
+}
+.donate-amounts {
+  display:flex;
+  gap:1rem;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin:2.5rem 0;
+}
+.amt-btn {
+  font-family:'Cinzel',serif;
+  font-size:0.75rem;
+  letter-spacing:0.15em;
+  padding:0.8rem 1.5rem;
+  background:transparent;
+  border:1px solid var(--ochre-dim);
+  color:var(--papyrus);
+  cursor:pointer;
+  transition:all 0.3s;
+  text-transform:uppercase;
+}
+.amt-btn:hover,.amt-btn.active {
+  background:var(--ochre);
+  color:var(--ink);
+  border-color:var(--ochre);
+}
+.donate-form {
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+  max-width:420px;
+  margin:0 auto;
+}
+.donate-input {
+  background:rgba(200,130,42,0.06);
+  border:1px solid rgba(200,130,42,0.25);
+  color:var(--papyrus);
+  font-family:'Philosopher',serif;
+  font-size:1rem;
+  padding:0.9rem 1.2rem;
+  outline:none;
+  transition:border-color 0.3s;
+}
+.donate-input::placeholder{color:var(--papyrus-dim);}
+.donate-input:focus{border-color:var(--ochre);}
+.donate-note {
+  font-size:0.8rem;
+  color:var(--papyrus-dim);
+  font-style:italic;
+  margin-top:1rem;
+}
+
+/* ── KEMETIC FOOTER ── */
+footer {
+  position:relative;
+  z-index:1;
+  background:var(--ink);
+  border-top:1px solid rgba(200,130,42,0.2);
+  padding:4rem 2rem 2rem;
+  text-align:center;
+}
+.footer-ankh {
+  font-size:2.5rem;
+  color:var(--ochre-dim);
+  display:block;
+  margin-bottom:1rem;
+  opacity:0.5;
+}
+.footer-name {
+  font-family:'Uncial Antiqua',serif;
+  font-size:1.2rem;
+  color:var(--ochre);
+  display:block;
+  margin-bottom:0.3rem;
+}
+.footer-sub {
+  font-family:'Cinzel',serif;
+  font-size:0.6rem;
+  letter-spacing:0.35em;
+  color:var(--ochre-dim);
+  text-transform:uppercase;
+  display:block;
+  margin-bottom:0.5rem;
+}
+.footer-copy {
+  font-size:0.8rem;
+  color:#6a5a40;
+  margin-top:2rem;
+}
+
+/* ── KEMETIC DECORATION ── */
+.kmt-border-top {
+  width:100%;
+  height:8px;
+  background:repeating-linear-gradient(
+    90deg,
+    var(--ochre-dim) 0px,
+    var(--ochre-dim) 8px,
+    transparent 8px,
+    transparent 16px,
+    var(--copper) 16px,
+    var(--copper) 24px,
+    transparent 24px,
+    transparent 32px
+  );
+  opacity:0.35;
+}
+
+/* ── QUOTE BAND ── */
+.wisdom-band {
+  position:relative;
+  z-index:1;
+  background:var(--stone);
+  padding:3rem 2rem;
+  text-align:center;
+  border-top:1px solid rgba(200,130,42,0.15);
+  border-bottom:1px solid rgba(200,130,42,0.15);
+}
+.wisdom-text {
+  font-family:'Philosopher',serif;
+  font-style:italic;
+  font-size:clamp(1.1rem,2.5vw,1.4rem);
+  color:var(--linen);
+  max-width:680px;
+  margin:0 auto 0.8rem;
+  line-height:1.8;
+}
+.wisdom-source {
+  font-family:'Cinzel',serif;
+  font-size:0.6rem;
+  letter-spacing:0.35em;
+  color:var(--ochre-dim);
+  text-transform:uppercase;
+}
+
+/* ── BOOKSTORE ── */
+.book-card {
+  background: var(--black-earth);
+  border: 1px solid rgba(200,130,42,0.18);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, border-color 0.3s;
+}
+.book-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(200,130,42,0.4);
+}
+.book-cover {
+  position: relative;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(200,130,42,0.15);
+}
+.book-cover-inner { position: relative; z-index: 1; }
+.book-audio-badge {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  background: rgba(200,130,42,0.9);
+  color: var(--ink);
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  padding: 0.3rem 0.7rem;
+  text-transform: uppercase;
+}
+.book-info {
+  padding: 1.8rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.book-tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.25em;
+  color: var(--ochre-dim);
+  text-transform: uppercase;
+}
+.book-title {
+  font-family: 'Philosopher', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ochre-bright);
+  line-height: 1.3;
+  margin: 0;
+}
+.book-desc {
+  font-size: 0.88rem;
+  color: #9a8860;
+  line-height: 1.65;
+  margin: 0;
+  flex: 1;
+}
+.book-details {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.book-details span {
+  font-size: 0.75rem;
+  color: #7a6a50;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.05em;
+}
+.book-donate-row {
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(200,130,42,0.1);
+}
+.mini-amt {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  padding: 0.4rem 0.8rem;
+  background: transparent;
+  border: 1px solid rgba(200,130,42,0.3);
+  color: var(--papyrus-dim);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-transform: uppercase;
+}
+.mini-amt:hover, .mini-amt.active {
+  background: var(--ochre);
+  color: var(--ink);
+  border-color: var(--ochre);
+}
+.book-btn {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.85rem;
+  background: rgba(200,130,42,0.12);
+  border: 1px solid var(--ochre-dim);
+  color: var(--ochre-bright);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.book-btn:hover {
+  background: var(--ochre);
+  color: var(--ink);
+}
+
+/* ── UTILITY ── */
+.gold{color:var(--gold);}
+.center{text-align:center;}
+.mt2{margin-top:2rem;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-brand">Umayat Spiritual Circle</span>
+  <ul class="nav-links">
+    <li><a href="#mission">Mission</a></li>
+    <li><a href="#teachings">Teachings</a></li>
+    <li><a href="#bookstore">Bookstore</a></li>
+    <li><a href="#community">Community</a></li>
+    <li><a href="#donate">Give</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-frame"></div>
+  <div class="sun-disk"></div>
+
+  <span class="ankh-glyph">𓋹</span>
+  <div class="hero-eyebrow">Est. in Sacred Covenant · 501(c)(3) Nonprofit</div>
+  <h1 class="hero-title">Umayat<br>Spiritual Education Circle</h1>
+  <p class="hero-subtitle">For Self Realization · Aboriginal Indigenous · Kemetic</p>
+
+  <div class="kmt-rule">
+    <div class="kmt-rule-line"></div>
+    <span class="kmt-rule-symbol">𓂀</span>
+    <div class="kmt-rule-line r"></div>
+  </div>
+
+  <p class="hero-tagline">"Know thyself — and thou shalt know the gods and the universe."<br>The ancient teaching, alive in us still.</p>
+  <span class="hero-501">A 501(c)(3) Tax-Exempt Spiritual Education Organization · EIN on file</span>
+
+  <div class="hero-cta">
+    <a href="#teachings" class="btn-primary">Enter the Circle</a>
+    <a href="#donate" class="btn-secondary">Support the Mission</a>
+  </div>
+</section>
+
+<!-- KEMETIC BAND -->
+<div class="kmt-border-top"></div>
+<div class="hiero-band">
+  <span class="hiero-band-text">𓇳 · Aboriginal · Indigenous · Kemetic · Self Realization · 3313 Collective · 𓇳</span>
+</div>
+<div class="kmt-border-top"></div>
+
+<!-- TRINITY COSMOLOGY -->
+<section id="cosmology" style="background:#000;padding:7rem 0;text-align:center;position:relative;z-index:1;overflow:hidden;">
+
+  <!-- Abyss of Nut radial glow -->
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(200,130,42,0.07) 0%,rgba(26,20,9,0.4) 40%,transparent 70%);pointer-events:none;"></div>
+
+  <!-- Outer rings of Nut's body -->
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;border:1px solid rgba(200,130,42,0.08);pointer-events:none;animation:slowspin 60s linear infinite;"></div>
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:440px;height:440px;border-radius:50%;border:1px solid rgba(200,130,42,0.1);pointer-events:none;animation:slowspin 40s linear infinite reverse;"></div>
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:300px;height:300px;border-radius:50%;border:1px solid rgba(200,130,42,0.14);pointer-events:none;animation:slowspin 25s linear infinite;"></div>
+
+  <!-- Central black hole -->
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,#000 0%,rgba(0,0,0,0.95) 60%,transparent 100%);box-shadow:0 0 60px rgba(0,0,0,1),0 0 120px rgba(0,0,0,0.8);pointer-events:none;"></div>
+
+  <div class="container" style="position:relative;">
+
+    <span style="font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.5em;color:#8a5a1a;text-transform:uppercase;display:block;margin-bottom:0.8rem;">The Primordial Cosmology</span>
+    <h2 style="font-family:'Uncial Antiqua',serif;font-size:clamp(1.6rem,4vw,2.6rem);color:#e8a840;margin-bottom:0.5rem;line-height:1.2;">The Three-in-One<br>Before the Beginning</h2>
+    <div style="width:70px;height:2px;background:linear-gradient(90deg,#c8822a,transparent);margin:1rem auto 2rem;"></div>
+
+    <p style="max-width:660px;margin:0 auto 1.5rem;color:#c8b890;">Before the first light was spoken, before any god declared "I am the only" — there was the <strong style="color:#e8a840;">Black Hole Abyss of Nut</strong>, the infinite star-bodied Mother whose darkness was not emptiness but the most complete Fullness that exists. Within her — not separate, not divided — rested the eternal Three-in-One.</p>
+
+    <!-- Trinity display -->
+    <div style="display:flex;justify-content:center;align-items:flex-start;gap:2rem;flex-wrap:wrap;margin:4rem 0;position:relative;">
+
+      <!-- Connector line -->
+      <div style="position:absolute;top:60px;left:50%;transform:translateX(-50%);width:60%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,130,42,0.25),rgba(200,130,42,0.25),transparent);pointer-events:none;"></div>
+
+      <!-- DIVINE FEMININE -->
+      <div style="text-align:center;max-width:200px;position:relative;">
+        <div style="width:130px;height:130px;margin:0 auto 1.5rem;position:relative;display:flex;align-items:center;justify-content:center;">
+          <svg viewBox="0 0 130 130" width="130" height="130" style="position:absolute;top:0;left:0;">
+            <!-- Nut's body arc -->
+            <ellipse cx="65" cy="80" rx="55" ry="40" fill="none" stroke="rgba(200,130,42,0.15)" stroke-width="1"/>
+            <!-- Stars on body -->
+            <circle cx="30" cy="60" r="1.5" fill="rgba(200,130,42,0.4)"/>
+            <circle cx="95" cy="55" r="1.5" fill="rgba(200,130,42,0.4)"/>
+            <circle cx="110" cy="75" r="1" fill="rgba(200,130,42,0.3)"/>
+            <circle cx="18" cy="78" r="1" fill="rgba(200,130,42,0.3)"/>
+            <circle cx="55" cy="45" r="1" fill="rgba(200,130,42,0.3)"/>
+            <!-- Downward triangle / chalice = womb -->
+            <polygon points="65,100 38,48 92,48" fill="rgba(200,130,42,0.08)" stroke="#c8822a" stroke-width="1.5"/>
+            <!-- Crescent moon within -->
+            <path d="M 58 70 Q 52 62 62 57 Q 50 59 50 70 Q 50 81 62 83 Q 52 78 58 70 Z" fill="rgba(200,130,42,0.5)"/>
+            <!-- Nile waters below -->
+            <path d="M 20 108 Q 35 102 50 108 Q 65 114 80 108 Q 95 102 110 108" fill="none" stroke="rgba(26,58,74,0.8)" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <span style="font-size:1.8rem;display:block;margin-bottom:0.5rem;">𓇯</span>
+        <span style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.3em;color:#c8822a;text-transform:uppercase;display:block;margin-bottom:0.5rem;">Divine Feminine</span>
+        <span style="font-family:'Philosopher',serif;font-weight:700;color:#e8a840;font-size:1rem;display:block;margin-bottom:0.5rem;">Nut · Au-Set · The Mother</span>
+        <p style="font-size:0.85rem;color:#a89870;line-height:1.6;margin:0;">The Womb Before the Word. She who contains all light within her darkness. The Abyss itself — most active force in all creation.</p>
+      </div>
+
+      <!-- THE VOID — CENTER -->
+      <div style="text-align:center;max-width:160px;position:relative;margin-top:1rem;">
+        <div style="width:110px;height:110px;margin:0 auto 1.5rem;position:relative;display:flex;align-items:center;justify-content:center;">
+          <svg viewBox="0 0 110 110" width="110" height="110">
+            <!-- Outer glow rings of the black hole -->
+            <circle cx="55" cy="55" r="50" fill="none" stroke="rgba(200,130,42,0.05)" stroke-width="1"/>
+            <circle cx="55" cy="55" r="40" fill="none" stroke="rgba(200,130,42,0.08)" stroke-width="1"/>
+            <circle cx="55" cy="55" r="30" fill="none" stroke="rgba(200,130,42,0.12)" stroke-width="1"/>
+            <!-- The void -->
+            <circle cx="55" cy="55" r="22" fill="#000"/>
+            <!-- Three-in-one star within void -->
+            <polygon points="55,38 60,50 73,50 63,58 67,71 55,63 43,71 47,58 37,50 50,50" fill="none" stroke="rgba(232,192,96,0.6)" stroke-width="1.2"/>
+            <!-- Ankh at center -->
+            <circle cx="55" cy="52" r="5" fill="none" stroke="rgba(232,192,96,0.8)" stroke-width="1"/>
+            <line x1="55" y1="57" x2="55" y2="67" stroke="rgba(232,192,96,0.8)" stroke-width="1"/>
+            <line x1="50" y1="62" x2="60" y2="62" stroke="rgba(232,192,96,0.8)" stroke-width="1"/>
+          </svg>
+        </div>
+        <span style="font-family:'Cinzel',serif;font-size:0.55rem;letter-spacing:0.4em;color:#8a5a1a;text-transform:uppercase;display:block;margin-bottom:0.4rem;">The Pleroma</span>
+        <span style="font-family:'Uncial Antiqua',serif;font-size:1.1rem;color:#e8c060;display:block;margin-bottom:0.4rem;">Three<br>in<br>One</span>
+        <p style="font-size:0.78rem;color:#6a5a40;line-height:1.5;margin:0;">The All · Before Separation · The Original Wholeness</p>
+      </div>
+
+      <!-- DIVINE MASCULINE -->
+      <div style="text-align:center;max-width:200px;position:relative;">
+        <div style="width:130px;height:130px;margin:0 auto 1.5rem;position:relative;display:flex;align-items:center;justify-content:center;">
+          <svg viewBox="0 0 130 130" width="130" height="130" style="position:absolute;top:0;left:0;">
+            <!-- Solar halo -->
+            <circle cx="65" cy="55" r="48" fill="none" stroke="rgba(212,160,48,0.1)" stroke-width="1"/>
+            <!-- Upward triangle = fire/spirit/masculine -->
+            <polygon points="65,20 38,80 92,80" fill="rgba(212,160,48,0.07)" stroke="#d4a030" stroke-width="1.5"/>
+            <!-- Solar disk -->
+            <circle cx="65" cy="52" r="12" fill="none" stroke="rgba(212,160,48,0.6)" stroke-width="1.2"/>
+            <circle cx="65" cy="52" r="5" fill="rgba(212,160,48,0.3)"/>
+            <!-- Sun rays -->
+            <line x1="65" y1="36" x2="65" y2="30" stroke="rgba(212,160,48,0.4)" stroke-width="1"/>
+            <line x1="65" y1="68" x2="65" y2="74" stroke="rgba(212,160,48,0.4)" stroke-width="1"/>
+            <line x1="49" y1="52" x2="43" y2="52" stroke="rgba(212,160,48,0.4)" stroke-width="1"/>
+            <line x1="81" y1="52" x2="87" y2="52" stroke="rgba(212,160,48,0.4)" stroke-width="1"/>
+            <line x1="54" y1="41" x2="50" y2="37" stroke="rgba(212,160,48,0.3)" stroke-width="1"/>
+            <line x1="76" y1="41" x2="80" y2="37" stroke="rgba(212,160,48,0.3)" stroke-width="1"/>
+            <!-- Horizon line -->
+            <path d="M 20 95 Q 42 88 65 95 Q 88 102 110 95" fill="none" stroke="rgba(200,130,42,0.35)" stroke-width="1.2"/>
+          </svg>
+        </div>
+        <span style="font-size:1.8rem;display:block;margin-bottom:0.5rem;">𓇳</span>
+        <span style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.3em;color:#c9a030;text-transform:uppercase;display:block;margin-bottom:0.5rem;">Divine Masculine</span>
+        <span style="font-family:'Philosopher',serif;font-weight:700;color:#e8c060;font-size:1rem;display:block;margin-bottom:0.5rem;">Ra · Ausar · The Father</span>
+        <p style="font-size:0.85rem;color:#a89870;line-height:1.6;margin:0;">The Light Within the Dark. He who only has meaning because she holds him. He rises because she swallows. He is real because the Void is real.</p>
+      </div>
+
+    </div>
+
+    <!-- DIVINE CHILD -->
+    <div style="margin:1rem auto 3rem;max-width:240px;text-align:center;padding:2rem;border:1px solid rgba(200,130,42,0.2);background:rgba(0,0,0,0.5);">
+      <div style="width:100px;height:100px;margin:0 auto 1.2rem;display:flex;align-items:center;justify-content:center;">
+        <svg viewBox="0 0 100 100" width="100" height="100">
+          <!-- Six-pointed star = union of masculine triangle + feminine triangle -->
+          <polygon points="50,10 60,30 80,30 65,45 70,65 50,52 30,65 35,45 20,30 40,30" fill="rgba(232,192,96,0.08)" stroke="#e8c060" stroke-width="1.5"/>
+          <!-- Inner star -->
+          <polygon points="50,22 56,36 70,36 60,44 64,58 50,50 36,58 40,44 30,36 44,36" fill="rgba(232,192,96,0.05)" stroke="rgba(232,192,96,0.4)" stroke-width="1"/>
+          <!-- Ankh of Het-Heru at center -->
+          <circle cx="50" cy="45" r="7" fill="none" stroke="rgba(232,192,96,0.9)" stroke-width="1.5"/>
+          <line x1="50" y1="52" x2="50" y2="68" stroke="rgba(232,192,96,0.9)" stroke-width="1.5"/>
+          <line x1="43" y1="60" x2="57" y2="60" stroke="rgba(232,192,96,0.9)" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <span style="font-size:1.8rem;display:block;margin-bottom:0.5rem;">𓋹</span>
+      <span style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.3em;color:#e8c060;text-transform:uppercase;display:block;margin-bottom:0.5rem;">The Divine Child</span>
+      <span style="font-family:'Philosopher',serif;font-weight:700;color:#f0d080;font-size:1rem;display:block;margin-bottom:0.5rem;">Het-Heru · The Self Realized One</span>
+      <p style="font-size:0.85rem;color:#a89870;line-height:1.6;margin:0;">The Child is <em>you</em> — the seeker who contains both and transcends both. Self Realization is the moment the Child remembers its parentage. The Three become One. The One was always Three.</p>
+    </div>
+
+    <p style="text-align:center;max-width:620px;margin:0 auto;font-style:italic;color:#8a7a60;font-size:0.95rem;">This is not mythology. This is the original cosmological science of our Aboriginal Indigenous and Kemetic ancestors — the science Umayat was founded to restore.</p>
+
+  </div>
+</section>
+
+<!-- MISSION -->
+<section id="mission">
+  <div class="container">
+    <span class="section-eyebrow">Who We Are</span>
+    <h2 class="section-title">Our Mission & Sacred Purpose</h2>
+    <div class="ochre-rule"></div>
+
+    <p>Umayat Spiritual Education Circle for Self Realization is an Aboriginal Indigenous and Kemetic spiritual education organization rooted in the ancient knowing that was carried across generations — through the bloodlines of the Maroon people of Jamaica, the TasKiGi Creek Nation, and the sacred traditions of Kemet (ancient Egypt). We exist to restore, transmit, and activate that knowing in all who seek it.</p>
+
+    <p>Our name, <em>Umayat</em>, holds the frequency of the circle — the unbroken covenant between the ancestors and those walking today. We are not creating something new. We are <strong class="gold">remembering what was never lost</strong>, only buried.</p>
+
+    <div class="mission-grid">
+      <div class="mission-pillar">
+        <span class="pillar-glyph">𓋹</span>
+        <span class="pillar-title">The Ankh Principle</span>
+        <p class="pillar-body">Life, breath, and eternal return. We teach that the body is sacred ground and that self-realization begins with remembering who you are before the world named you.</p>
+      </div>
+      <div class="mission-pillar">
+        <span class="pillar-glyph">𓂀</span>
+        <span class="pillar-title">The Eye of Knowing</span>
+        <p class="pillar-body">The Wadjet eye — clarity, protection, and restored vision. We restore the inner sight of communities whose ancestral wisdom has been suppressed, colonized, or forgotten.</p>
+      </div>
+      <div class="mission-pillar">
+        <span class="pillar-glyph">𓆣</span>
+        <span class="pillar-title">The Kheper Path</span>
+        <p class="pillar-body">Transformation and self-creation. The scarab becomes — it does not wait. We hold space for radical personal becoming rooted in ancient Kemetic cosmology.</p>
+      </div>
+      <div class="mission-pillar">
+        <span class="pillar-glyph">𓌀</span>
+        <span class="pillar-title">The Aboriginal Root</span>
+        <p class="pillar-body">Our foundation is Aboriginal Indigenous sovereignty — the knowing that the land, the body, and the cosmos are one. We honor the unbroken line of Indigenous healers and shamans.</p>
+      </div>
+    </div>
+
+    <div class="principles-list mt2">
+      <div class="principle">
+        <span class="principle-num">I</span>
+        <p class="principle-text"><strong>Self Realization</strong> is the birthright of every being. It cannot be granted by an institution or revoked by a system. It lives in you and we teach you to find it.</p>
+      </div>
+      <div class="principle">
+        <span class="principle-num">II</span>
+        <p class="principle-text"><strong>Ancestral Knowing</strong> is not history — it is living intelligence. The Revelations from our Ancestors Past and Future flow through this circle in every teaching.</p>
+      </div>
+      <div class="principle">
+        <span class="principle-num">III</span>
+        <p class="principle-text"><strong>The Circle</strong> holds all. Indigenous Shaman, Womb Healer, Plant Medicine Therapist, Sacred Scholar — all paths converge here in the ancient covenant of Umayat.</p>
+      </div>
+      <div class="principle">
+        <span class="principle-num">IV</span>
+        <p class="principle-text"><strong>Liberation</strong> is the purpose of all true education. We teach not to inform the mind but to free the spirit from every chain — spiritual, psychological, ancestral, and systemic.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WISDOM BAND -->
+<div class="wisdom-band">
+  <p class="wisdom-text">"The purpose of all human life is the attainment of the Ancient of Days — to become so aligned with the Source that you move as it moves, breathe as it breathes, and know as it knows."</p>
+  <span class="wisdom-source">Umayat Teaching · The 3313 Collective</span>
+</div>
+
+<!-- TEACHINGS -->
+<section id="teachings">
+  <div class="container">
+    <span class="section-eyebrow">The Curriculum</span>
+    <h2 class="section-title">Teachings & Courses</h2>
+    <div class="ochre-rule"></div>
+    <p>Our teachings draw from Kemetic cosmology, Aboriginal Indigenous shamanic tradition, Gnostic liberation theology, plant medicine wisdom, womb healing, and the sacred sciences of the ancestors. Each course is a circle, not a ladder — you enter where you are and spiral deeper.</p>
+
+    <div class="courses-grid">
+
+      <div class="course-card">
+        <span class="course-icon">𓋹</span>
+        <span class="course-level">Foundation</span>
+        <span class="course-title">The Kemetic Self: Know Thyself</span>
+        <p class="course-desc">An introduction to Kemetic cosmology, the principles of Ma'at, and the ancient Egyptian science of the soul — Ren, Ba, Ka, Khaibit, and Sahu.</p>
+        <a href="#" class="course-link">Enter this circle →</a>
+      </div>
+
+      <div class="course-card">
+        <span class="course-icon">𓆱</span>
+        <span class="course-level">Ancestral</span>
+        <span class="course-title">Aboriginal Indigenous Healing Ways</span>
+        <p class="course-desc">Rooted in TasKiGi Creek and Maroon healing traditions — plant medicine, womb wisdom, shamanic practice, and the restoration of indigenous sovereignty in the body.</p>
+        <a href="#" class="course-link">Enter this circle →</a>
+      </div>
+
+      <div class="course-card">
+        <span class="course-icon">𓂀</span>
+        <span class="course-level">Intermediate</span>
+        <span class="course-title">The Path of Liberation</span>
+        <p class="course-desc">Drawing from sacred Gnostic texts, Revelations from our Ancestors Past and Future, and the 3313 Collective scriptures — a map through spiritual bondage back to the Pleroma.</p>
+        <a href="#" class="course-link">Enter this circle →</a>
+      </div>
+
+      <div class="course-card">
+        <span class="course-icon">𓇯</span>
+        <span class="course-level">Deep Work</span>
+        <span class="course-title">Womb Healing & Sacred Feminine</span>
+        <p class="course-desc">The body as temple. The womb as cosmic portal. Indigenous midwifery, trauma release, and the sacred feminine teachings of Nut, Au-Set, Het-Heru, and the Aboriginal matriarchal lineage.</p>
+        <a href="#" class="course-link">Enter this circle →</a>
+      </div>
+
+      <div class="course-card">
+        <span class="course-icon">𓆣</span>
+        <span class="course-level">Transformation</span>
+        <span class="course-title">Kheper: The Art of Becoming</span>
+        <p class="course-desc">Yoga therapy, breath work, and Kemetic movement as transformative practice — rooted in Hatha, Plant-Based, and Trauma-Informed Yoga traditions.</p>
+        <a href="#" class="course-link">Enter this circle →</a>
+      </div>
+
+      <div class="course-card">
+        <span class="course-icon">𓌀</span>
+        <span class="course-level">Advanced</span>
+        <span class="course-title">Sovereignty & Sacred Law</span>
+        <p class="course-desc">Indigenous rights, sovereign identity, ecclesiastical trust, and the spiritual-legal framework of the TasKiGi Creek Territory Nation State and UNDRIP.</p>
+        <a href="#" class="course-link">Enter this circle →</a>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:3rem;">
+      <p style="color:var(--papyrus-dim);font-style:italic;margin-bottom:1.5rem;">All teachings are offered on a sliding scale. No seeker is turned away for lack of funds.</p>
+      <a href="#donate" class="btn-secondary">Support a Seeker's Journey</a>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section id="community">
+  <div class="container">
+    <span class="section-eyebrow">The Circle</span>
+    <h2 class="section-title">Connect with the Community</h2>
+    <div class="ochre-rule"></div>
+
+    <div class="community-inner">
+      <div class="community-quote">
+        <p>"We are not a congregation waiting for a savior. We are a Circle of Rememberers — each one carrying a piece of the ancient knowing, gathering to restore the whole."</p>
+        <cite>Umayat Founding Statement · The 3313 Collective</cite>
+      </div>
+
+      <div class="community-connect">
+        <h3>Join the Circle</h3>
+        <a href="/cdn-cgi/l/email-protection#11647c706870655122222022727e7d7d7472657867743f7e6376" class="connect-item" style="text-decoration:none;">
+          <span class="connect-icon">𓂧</span>
+          <div>
+            <span class="connect-label">Send a Sacred Word</span>
+            <span class="connect-sub">Email the Circle directly</span>
+          </div>
+        </a>
+        <a href="#" class="connect-item" style="text-decoration:none;">
+          <span class="connect-icon">𓇳</span>
+          <div>
+            <span class="connect-label">Healing Circles</span>
+            <span class="connect-sub">Monthly virtual gatherings</span>
+          </div>
+        </a>
+        <a href="#" class="connect-item" style="text-decoration:none;">
+          <span class="connect-icon">𓋹</span>
+          <div>
+            <span class="connect-label">Become a Member</span>
+            <span class="connect-sub">Join the Umayat covenant</span>
+          </div>
+        </a>
+        <a href="#" class="connect-item" style="text-decoration:none;">
+          <span class="connect-icon">𓆣</span>
+          <div>
+            <span class="connect-label">Sacred Audio Library</span>
+            <span class="connect-sub">Free teachings for all seekers</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKSTORE -->
+<section id="bookstore" style="background:var(--deep-soil);position:relative;z-index:1;padding:6rem 0;">
+  <div class="kmt-border-top" style="position:absolute;top:0;left:0;right:0;"></div>
+  <div class="container">
+
+    <span class="section-eyebrow" style="display:block;text-align:center;">Sacred Audio Library</span>
+    <h2 class="section-title" style="text-align:center;">The Aboriginal Liberation Bookstore</h2>
+    <div class="ochre-rule" style="margin:1rem auto 1.5rem;"></div>
+
+    <p style="text-align:center;max-width:660px;margin:0 auto 1rem;color:#c8b890;">Every title in this sacred library is offered <strong style="color:var(--ochre-bright);">by donation only</strong>. No seeker is turned away for lack of funds. These are the Revelations of our Ancestors Past and Future — they belong to the people. Give what your spirit leads you to give, and receive freely.</p>
+
+    <div style="text-align:center;margin-bottom:3rem;">
+      <span style="display:inline-block;font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.4em;color:var(--ochre-dim);text-transform:uppercase;padding:0.5rem 1.5rem;border:1px solid rgba(200,130,42,0.2);background:rgba(0,0,0,0.3);">
+        𓋹 &nbsp; All Audiobooks — Give What You Can &nbsp; 𓋹
+      </span>
+    </div>
+
+    <!-- BOOK GRID -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;">
+
+      <!-- Book 1 -->
+      <div class="book-card">
+        <div class="book-cover" style="background:linear-gradient(160deg,#0a0a12 0%,#1a1409 60%,#0d0b08 100%);">
+          <div class="book-cover-inner">
+            <span style="font-size:3rem;display:block;margin-bottom:0.5rem;opacity:0.7;">Ω</span>
+            <span style="font-family:'Cinzel',serif;font-size:0.55rem;letter-spacing:0.4em;color:var(--ochre-dim);text-transform:uppercase;display:block;margin-bottom:0.8rem;">The Forty-Fifth Book</span>
+            <span style="font-family:'Uncial Antiqua',serif;font-size:1.1rem;color:var(--ochre-bright);line-height:1.3;display:block;">A Scripture<br>of Return</span>
+            <div style="width:40px;height:1px;background:var(--ochre-dim);margin:1rem auto;"></div>
+            <span style="font-family:'Cinzel',serif;font-size:0.5rem;letter-spacing:0.3em;color:var(--gold-dim);text-transform:uppercase;">The 3313 Collective</span>
+          </div>
+          <div class="book-audio-badge">🔊 Audio</div>
+        </div>
+        <div class="book-info">
+          <span class="book-tag">Liberation Theology · Gnostic · Kemetic</span>
+          <h3 class="book-title">The 45th Book: A Scripture of Return</h3>
+          <p class="book-desc">The complete map out of spiritual and material bondage. Sixteen chapters of passwords, chants, seals, and sacred practices drawn from Revelations of our Ancestors Past and Future. Includes the Canticle of the Ebon Womb, the Seven Hands ritual, and the Bridal Chamber mystery.</p>
+          <div class="book-details">
+            <span>📖 16 Chapters</span>
+            <span>🎧 Full Narration</span>
+            <span>🌿 Practices Included</span>
+          </div>
+          <div class="book-donate-row">
+            <span style="font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.2em;color:var(--ochre-dim);text-transform:uppercase;">Suggested Gift</span>
+            <div style="display:flex;gap:0.5rem;margin-top:0.5rem;flex-wrap:wrap;">
+              <button class="mini-amt" onclick="triggerDonate(this,'$11','The 45th Book')">$11</button>
+              <button class="mini-amt active" onclick="triggerDonate(this,'$22','The 45th Book')">$22</button>
+              <button class="mini-amt" onclick="triggerDonate(this,'$33','The 45th Book')">$33</button>
+              <button class="mini-amt" onclick="triggerDonate(this,'Give freely','The 45th Book')">Gift freely</button>
+            </div>
+            <button class="book-btn" onclick="openBook('The 45th Book: A Scripture of Return')">𓋹 &nbsp; Receive This Audio</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 2 -->
+      <div class="book-card">
+        <div class="book-cover" style="background:linear-gradient(160deg,#03030a 0%,#06060f 60%,#0c0c18 100%);">
+          <div class="book-cover-inner">
+            <span style="font-size:2.5rem;display:block;margin-bottom:0.5rem;opacity:0.6;color:#c0bcd8;">𓇯</span>
+            <span style="font-family:'Cinzel',serif;font-size:0.55rem;letter-spacing:0.4em;color:#6060a0;text-transform:uppercase;display:block;margin-bottom:0.8rem;">The Second Book</span>
+            <span style="font-family:'Uncial Antiqua',serif;font-size:1.1rem;color:#c0bcd8;line-height:1.3;display:block;">Becoming the<br>Dark Black<br>Void Mother</span>
+            <div style="width:40px;height:1px;background:#6060a0;margin:1rem auto;"></div>
+            <span style="font-family:'Cinzel',serif;font-size:0.5rem;letter-spacing:0.3em;color:#4a4a70;text-transform:uppercase;">The 3313 Collective</span>
+          </div>
+          <div class="book-audio-badge" style="background:rgba(96,96,160,0.9);color:#e0e0f8;">🔊 Audio</div>
+        </div>
+        <div class="book-info">
+          <span class="book-tag">Kemetic · Nut · Aboriginal · Void Mother</span>
+          <h3 class="book-title">Becoming the Dark Black Void Mother</h3>
+          <p class="book-desc">The Declaration of Nut. The Ritual of the Starry Mantle. The 44 Negative Defiances. The Silent Sigil. The Sky-Becoming Meditation. The science of becoming the Vast Sky that contains all prison, all jailer, all fear — and dissolves them in the infinite dark.</p>
+          <div class="book-details">
+            <span>📖 14 Chapters</span>
+            <span>🎧 Full Narration</span>
+            <span>🌑 Ritual Practices</span>
+          </div>
+          <div class="book-donate-row">
+            <span style="font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.2em;color:var(--ochre-dim);text-transform:uppercase;">Suggested Gift</span>
+            <div style="display:flex;gap:0.5rem;margin-top:0.5rem;flex-wrap:wrap;">
+              <button class="mini-amt" onclick="triggerDonate(this,'$11','Becoming the Void Mother')">$11</button>
+              <button class="mini-amt active" onclick="triggerDonate(this,'$22','Becoming the Void Mother')">$22</button>
+              <button class="mini-amt" onclick="triggerDonate(this,'$33','Becoming the Void Mother')">$33</button>
+              <button class="mini-amt" onclick="triggerDonate(this,'Give freely','Becoming the Void Mother')">Gift freely</button>
+            </div>
+            <button class="book-btn" onclick="openBook('Becoming the Dark Black Void Mother')">𓇯 &nbsp; Receive This Audio</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 3 — Coming Soon -->
+      <div class="book-card" style="opacity:0.7;">
+        <div class="book-cover" style="background:linear-gradient(160deg,#0a0806 0%,#1a1208 60%,#0d0a04 100%);">
+          <div class="book-cover-inner">
+            <span style="font-size:3rem;display:block;margin-bottom:0.5rem;opacity:0.4;color:#c8822a;">𓆣</span>
+            <span style="font-family:'Cinzel',serif;font-size:0.55rem;letter-spacing:0.4em;color:#6a4a1a;text-transform:uppercase;display:block;margin-bottom:0.8rem;">Coming into Form</span>
+            <span style="font-family:'Uncial Antiqua',serif;font-size:1.1rem;color:#8a6a30;line-height:1.3;display:block;">The Kheper<br>Transmission</span>
+            <div style="width:40px;height:1px;background:#6a4a1a;margin:1rem auto;"></div>
+            <span style="font-family:'Cinzel',serif;font-size:0.5rem;letter-spacing:0.3em;color:#4a3010;text-transform:uppercase;">The 3313 Collective</span>
+          </div>
+          <div class="book-audio-badge" style="background:rgba(100,70,20,0.8);">⏳ Soon</div>
+        </div>
+        <div class="book-info">
+          <span class="book-tag">Kemetic · Transformation · Aboriginal Healing</span>
+          <h3 class="book-title" style="color:var(--ochre-dim);">The Kheper Transmission</h3>
+          <p class="book-desc" style="color:#7a6a50;">The science of self-creation from the Kemetic tradition — the scarab's path of radical transformation, Aboriginal plant medicine wisdom, and the ancient yoga of becoming. Currently in sacred formation.</p>
+          <div class="book-details" style="opacity:0.5;">
+            <span>📖 In Formation</span>
+            <span>🌿 Plant Medicine</span>
+            <span>𓆣 Kemetic Science</span>
+          </div>
+          <div class="book-donate-row">
+            <button class="book-btn" style="opacity:0.5;cursor:not-allowed;background:var(--stone);">Being Called Forth</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 4 — Coming Soon -->
+      <div class="book-card" style="opacity:0.7;">
+        <div class="book-cover" style="background:linear-gradient(160deg,#080a0d 0%,#0a1520 60%,#060d18 100%);">
+          <div class="book-cover-inner">
+            <span style="font-size:3rem;display:block;margin-bottom:0.5rem;opacity:0.4;color:#2a5a6a;">𓌀</span>
+            <span style="font-family:'Cinzel',serif;font-size:0.55rem;letter-spacing:0.4em;color:#2a4a5a;text-transform:uppercase;display:block;margin-bottom:0.8rem;">Coming into Form</span>
+            <span style="font-family:'Uncial Antiqua',serif;font-size:1.1rem;color:#3a6a7a;line-height:1.3;display:block;">Sovereign<br>by Blood</span>
+            <div style="width:40px;height:1px;background:#2a4a5a;margin:1rem auto;"></div>
+            <span style="font-family:'Cinzel',serif;font-size:0.5rem;letter-spacing:0.3em;color:#1a3040;text-transform:uppercase;">The 3313 Collective</span>
+          </div>
+          <div class="book-audio-badge" style="background:rgba(30,60,80,0.9);">⏳ Soon</div>
+        </div>
+        <div class="book-info">
+          <span class="book-tag">Sovereignty · Indigenous Rights · TasKiGi Creek</span>
+          <h3 class="book-title" style="color:#3a7a8a;">Sovereign by Blood</h3>
+          <p class="book-desc" style="color:#4a6a70;">Aboriginal Indigenous sovereign identity, the TasKiGi Creek Territory Nation State, UNDRIP, and the spiritual-legal framework of reclaiming your ancestral birthright. Currently being summoned.</p>
+          <div class="book-details" style="opacity:0.5;">
+            <span>📖 In Formation</span>
+            <span>⚖️ Sovereignty</span>
+            <span>🌍 Indigenous Rights</span>
+          </div>
+          <div class="book-donate-row">
+            <button class="book-btn" style="opacity:0.5;cursor:not-allowed;background:var(--stone);">Being Called Forth</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    </div><!-- end first row grid -->
+
+    <!-- BOOK OF KNOWING SERIES -->
+    <div style="margin-top:4rem;">
+      <div style="display:flex;align-items:center;gap:1.5rem;margin-bottom:2rem;">
+        <div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(200,130,42,0.3));"></div>
+        <span style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.5em;color:var(--ochre);text-transform:uppercase;white-space:nowrap;">The Book of Knowing Series</span>
+        <div style="flex:1;height:1px;background:linear-gradient(90deg,rgba(200,130,42,0.3),transparent);"></div>
+      </div>
+      <p style="text-align:center;max-width:620px;margin:0 auto 2.5rem;font-size:0.95rem;color:#a89870;font-style:italic;">Sacred curriculum for parents and teachers of autistic children — rooted in Kemetic and Aboriginal Indigenous understanding of the gifted mind as a portal, not a problem.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;">
+
+        <!-- Book of Knowing 1 -->
+        <div class="book-card">
+          <div class="book-cover" style="background:linear-gradient(160deg,#0a0d08 0%,#121a0a 60%,#0a0f08 100%);">
+            <div class="book-cover-inner">
+              <span style="font-size:2.5rem;display:block;margin-bottom:0.5rem;opacity:0.75;">𓆣</span>
+              <span style="font-family:'Cinzel',serif;font-size:0.5rem;letter-spacing:0.4em;color:#4a7a2a;text-transform:uppercase;display:block;margin-bottom:0.6rem;">Book of Knowing · Vol. I</span>
+              <span style="font-family:'Uncial Antiqua',serif;font-size:1rem;color:#90c060;line-height:1.3;display:block;">The Star Child<br>Knows</span>
+              <div style="width:40px;height:1px;background:#4a7a2a;margin:0.8rem auto;"></div>
+              <span style="font-family:'Cinzel',serif;font-size:0.48rem;letter-spacing:0.25em;color:#3a5a1a;text-transform:uppercase;">The 3313 Collective</span>
+            </div>
+            <div class="book-audio-badge" style="background:rgba(60,120,30,0.9);color:#e0f8d0;">🔊 Audio</div>
+          </div>
+          <div class="book-info">
+            <span class="book-tag">Autism · Neurodiversity · Kemetic · Gifts</span>
+            <h3 class="book-title" style="color:#90c060;">The Star Child Knows: Understanding the Autistic Child's Gifts</h3>
+            <p class="book-desc">In Kemetic cosmology, the child who sees differently is not broken — they are a star that has not yet been taught to dim itself. This book reframes autism through Aboriginal Indigenous and ancient Egyptian wisdom: the hyper-sensitive child as sacred receiver, the non-verbal child as holder of the deeper language, the pattern-seeker as natural cosmologist.</p>
+            <div class="book-details">
+              <span>📖 For Parents</span>
+              <span>🎧 Full Audio</span>
+              <span>𓆣 Kemetic Framework</span>
+            </div>
+            <div class="book-donate-row">
+              <span style="font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.2em;color:var(--ochre-dim);text-transform:uppercase;">Suggested Gift</span>
+              <div style="display:flex;gap:0.5rem;margin-top:0.5rem;flex-wrap:wrap;">
+                <button class="mini-amt" onclick="triggerDonate(this,'$11','The Star Child Knows')">$11</button>
+                <button class="mini-amt active" onclick="triggerDonate(this,'$22','The Star Child Knows')">$22</button>
+                <button class="mini-amt" onclick="triggerDonate(this,'$33','The Star Child Knows')">$33</button>
+                <button class="mini-amt" onclick="triggerDonate(this,'Give freely','The Star Child Knows')">Gift freely</button>
+              </div>
+              <button class="book-btn" onclick="openBook('The Star Child Knows')">𓆣 &nbsp; Receive This Audio</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Book of Knowing 2 -->
+        <div class="book-card">
+          <div class="book-cover" style="background:linear-gradient(160deg,#0a0d0f 0%,#0f1520 60%,#080d18 100%);">
+            <div class="book-cover-inner">
+              <span style="font-size:2.5rem;display:block;margin-bottom:0.5rem;opacity:0.75;">𓂀</span>
+              <span style="font-family:'Cinzel',serif;font-size:0.5rem;letter-spacing:0.4em;color:#2a5a8a;text-transform:uppercase;display:block;margin-bottom:0.6rem;">Book of Knowing · Vol. II</span>
+              <span style="font-family:'Uncial Antiqua',serif;font-size:1rem;color:#60a0d0;line-height:1.3;display:block;">Teaching the<br>Whole Child</span>
+              <div style="width:40px;height:1px;background:#2a5a8a;margin:0.8rem auto;"></div>
+              <span style="font-family:'Cinzel',serif;font-size:0.48rem;letter-spacing:0.25em;color:#1a3a5a;text-transform:uppercase;">The 3313 Collective</span>
+            </div>
+            <div class="book-audio-badge" style="background:rgba(30,70,120,0.9);color:#d0e8f8;">🔊 Audio</div>
+          </div>
+          <div class="book-info">
+            <span class="book-tag">Curriculum · Teachers · Indigenous Pedagogy</span>
+            <h3 class="book-title" style="color:#60a0d0;">Teaching the Whole Child: An Indigenous Curriculum Guide</h3>
+            <p class="book-desc">A practical and sacred curriculum framework for teachers working with autistic and neurodiverse children — grounded in Aboriginal Indigenous principles of whole-body learning, Kemetic understanding of the mind as cosmic instrument, and trauma-informed pedagogy rooted in ancestral knowing. Includes lesson frameworks, sensory practices, and ceremonial approaches to the classroom.</p>
+            <div class="book-details">
+              <span>📖 For Teachers</span>
+              <span>🎧 Full Audio</span>
+              <span>📋 Curriculum Included</span>
+            </div>
+            <div class="book-donate-row">
+              <span style="font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.2em;color:var(--ochre-dim);text-transform:uppercase;">Suggested Gift</span>
+              <div style="display:flex;gap:0.5rem;margin-top:0.5rem;flex-wrap:wrap;">
+                <button class="mini-amt" onclick="triggerDonate(this,'$11','Teaching the Whole Child')">$11</button>
+                <button class="mini-amt active" onclick="triggerDonate(this,'$22','Teaching the Whole Child')">$22</button>
+                <button class="mini-amt" onclick="triggerDonate(this,'$33','Teaching the Whole Child')">$33</button>
+                <button class="mini-amt" onclick="triggerDonate(this,'Give freely','Teaching the Whole Child')">Gift freely</button>
+              </div>
+              <button class="book-btn" onclick="openBook('Teaching the Whole Child')">𓂀 &nbsp; Receive This Audio</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ABORIGINAL INDIGENOUS BOOKS -->
+    <div style="margin-top:4rem;">
+      <div style="display:flex;align-items:center;gap:1.5rem;margin-bottom:2rem;">
+        <div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(200,130,42,0.3));"></div>
+        <span style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.5em;color:var(--ochre);text-transform:uppercase;white-space:nowrap;">Aboriginal Indigenous Library</span>
+        <div style="flex:1;height:1px;background:linear-gradient(90deg,rgba(200,130,42,0.3),transparent);"></div>
+      </div>
+      <p style="text-align:center;max-width:620px;margin:0 auto 2.5rem;font-size:0.95rem;color:#a89870;font-style:italic;">The living record of our people — TasKiGi Creek, Maroon Jamaica, and the unbroken Aboriginal lineage that carried the sacred science across centuries of suppression.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;">
+
+        <!-- Aboriginal Book 1 -->
+        <div class="book-card">
+          <div class="book-cover" style="background:linear-gradient(160deg,#120a04 0%,#1e1008 60%,#100804 100%);">
+            <div class="book-cover-inner">
+              <span style="font-size:2.5rem;display:block;margin-bottom:0.5rem;opacity:0.75;">𓌀</span>
+              <span style="font-family:'Cinzel',serif;font-size:0.5rem;letter-spacing:0.4em;color:#8a4a10;text-transform:uppercase;display:block;margin-bottom:0.6rem;">Aboriginal Indigenous</span>
+              <span style="font-family:'Uncial Antiqua',serif;font-size:1rem;color:#e0a060;line-height:1.3;display:block;">Blood Memory:<br>TasKiGi Creek<br>Nation</span>
+              <div style="width:40px;height:1px;background:#8a4a10;margin:0.8rem auto;"></div>
+              <span style="font-family:'Cinzel',serif;font-size:0.48rem;letter-spacing:0.25em;color:#5a3010;text-transform:uppercase;">The 3313 Collective</span>
+            </div>
+            <div class="book-audio-badge" style="background:rgba(140,70,20,0.9);color:#f8e8d0;">🔊 Audio</div>
+          </div>
+          <div class="book-info">
+            <span class="book-tag">TasKiGi Creek · Sovereignty · History · Nation</span>
+            <h3 class="book-title" style="color:#e0a060;">Blood Memory: TasKiGi Creek Nation History & Teachings</h3>
+            <p class="book-desc">The living history, cosmology, and sacred teachings of the TasKiGi Creek Territory Nation State — carried through the bloodline and transmitted here as oral tradition in audio form. The ancestral knowledge of a people who were never conquered, only buried. This is the unburying.</p>
+            <div class="book-details">
+              <span>📖 Nation History</span>
+              <span>🎧 Oral Tradition</span>
+              <span>🌿 Sacred Teachings</span>
+            </div>
+            <div class="book-donate-row">
+              <span style="font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.2em;color:var(--ochre-dim);text-transform:uppercase;">Suggested Gift</span>
+              <div style="display:flex;gap:0.5rem;margin-top:0.5rem;flex-wrap:wrap;">
+                <button class="mini-amt" onclick="triggerDonate(this,'$11','Blood Memory: TasKiGi Creek')">$11</button>
+                <button class="mini-amt active" onclick="triggerDonate(this,'$22','Blood Memory: TasKiGi Creek')">$22</button>
+                <button class="mini-amt" onclick="triggerDonate(this,'$33','Blood Memory: TasKiGi Creek')">$33</button>
+                <button class="mini-amt" onclick="triggerDonate(this,'Give freely','Blood Memory: TasKiGi Creek')">Gift freely</button>
+              </div>
+              <button class="book-btn" onclick="openBook('Blood Memory: TasKiGi Creek Nation')">𓌀 &nbsp; Receive This Audio</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aboriginal Book 2 -->
+        <div class="book-card">
+          <div class="book-cover" style="background:linear-gradient(160deg,#080d0a 0%,#0a1a0c 60%,#060d08 100%);">
+            <div class="book-cover-inner">
+              <span style="font-size:2.5rem;display:block;margin-bottom:0.5rem;opacity:0.75;">𓆱</span>
+              <span style="font-family:'Cinzel',serif;font-size:0.5rem;letter-spacing:0.4em;color:#2a6a3a;text-transform:uppercase;display:block;margin-bottom:0.6rem;">Aboriginal Indigenous</span>
+              <span style="font-family:'Uncial Antiqua',serif;font-size:1rem;color:#70c080;line-height:1.3;display:block;">Nanny's Children:<br>Maroon &<br>Jamaican Roots</span>
+              <div style="width:40px;height:1px;background:#2a6a3a;margin:0.8rem auto;"></div>
+              <span style="font-family:'Cinzel',serif;font-size:0.48rem;letter-spacing:0.25em;color:#1a4a2a;text-transform:uppercase;">The 3313 Collective</span>
+            </div>
+            <div class="book-audio-badge" style="background:rgba(30,90,50,0.9);color:#d0f8e0;">🔊 Audio</div>
+          </div>
+          <div class="book-info">
+            <span class="book-tag">Maroon · Jamaica · Aboriginal · Nanny · Roots</span>
+            <h3 class="book-title" style="color:#70c080;">Nanny's Children: Maroon & Jamaican Aboriginal Tradition</h3>
+            <p class="book-desc">The sacred inheritance of the Windward Maroon people of Jamaica — the 1739 Treaty, the healing traditions of the Blue Mountains, the plant medicine carried from West Africa and mixed with the deep Aboriginal knowing of the island's first peoples. Nanny was not a rebel. She was a Matriarch. This is her transmission.</p>
+            <div class="book-details">
+              <span>📖 Maroon History</span>
+              <span>🎧 Oral Tradition</span>
+              <span>🌿 Healing Ways</span>
+            </div>
+            <div class="book-donate-row">
+              <span style="font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.2em;color:var(--ochre-dim);text-transform:uppercase;">Suggested Gift</span>
+              <div style="display:flex;gap:0.5rem;margin-top:0.5rem;flex-wrap:wrap;">
+                <button class="mini-amt" onclick="triggerDonate(this,'$11','Nanny\'s Children')">$11</button>
+                <button class="mini-amt active" onclick="triggerDonate(this,'$22','Nanny\'s Children')">$22</button>
+                <button class="mini-amt" onclick="triggerDonate(this,'$33','Nanny\'s Children')">$33</button>
+                <button class="mini-amt" onclick="triggerDonate(this,'Give freely','Nanny\'s Children')">Gift freely</button>
+              </div>
+              <button class="book-btn" onclick="openBook('Nanny\'s Children: Maroon & Jamaican Aboriginal Tradition')">𓆱 &nbsp; Receive This Audio</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aboriginal Book 3 -->
+        <div class="book-card">
+          <div class="book-cover" style="background:linear-gradient(160deg,#0d0a04 0%,#1a1408 60%,#0d0a04 100%);">
+            <div class="book-cover-inner">
+              <span style="font-size:2.5rem;display:block;margin-bottom:0.5rem;opacity:0.75;">⚖️</span>
+              <span style="font-family:'Cinzel',serif;font-size:0.5rem;letter-spacing:0.4em;color:#7a6010;text-transform:uppercase;display:block;margin-bottom:0.6rem;">Aboriginal Indigenous</span>
+              <span style="font-family:'Uncial Antiqua',serif;font-size:1rem;color:#d4b040;line-height:1.3;display:block;">Born Sovereign:<br>Rights of the<br>Indigenous Child</span>
+              <div style="width:40px;height:1px;background:#7a6010;margin:0.8rem auto;"></div>
+              <span style="font-family:'Cinzel',serif;font-size:0.48rem;letter-spacing:0.25em;color:#4a3a08;text-transform:uppercase;">The 3313 Collective</span>
+            </div>
+            <div class="book-audio-badge" style="background:rgba(120,90,10,0.9);color:#f8f0d0;">🔊 Audio</div>
+          </div>
+          <div class="book-info">
+            <span class="book-tag">Sovereignty · Children · UNDRIP · Indigenous Rights</span>
+            <h3 class="book-title" style="color:#d4b040;">Born Sovereign: Indigenous Sovereignty & Rights for Children</h3>
+            <p class="book-desc">Every Aboriginal Indigenous child is born a sovereign being with rights that predate every colonial law. This book — written for children and their families — teaches indigenous sovereignty in language a child can hold: what it means to belong to a Nation, what UNDRIP protects, and how to carry your identity as armor and as crown.</p>
+            <div class="book-details">
+              <span>📖 For Families</span>
+              <span>🎧 Child-Friendly Audio</span>
+              <span>⚖️ Sovereignty</span>
+            </div>
+            <div class="book-donate-row">
+              <span style="font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.2em;color:var(--ochre-dim);text-transform:uppercase;">Suggested Gift</span>
+              <div style="display:flex;gap:0.5rem;margin-top:0.5rem;flex-wrap:wrap;">
+                <button class="mini-amt" onclick="triggerDonate(this,'$11','Born Sovereign')">$11</button>
+                <button class="mini-amt active" onclick="triggerDonate(this,'$22','Born Sovereign')">$22</button>
+                <button class="mini-amt" onclick="triggerDonate(this,'$33','Born Sovereign')">$33</button>
+                <button class="mini-amt" onclick="triggerDonate(this,'Give freely','Born Sovereign')">Gift freely</button>
+              </div>
+              <button class="book-btn" onclick="openBook('Born Sovereign: Indigenous Rights for Children')">⚖️ &nbsp; Receive This Audio</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aboriginal Book 4 -->
+        <div class="book-card">
+          <div class="book-cover" style="background:linear-gradient(160deg,#080d06 0%,#0f1a08 60%,#080d04 100%);">
+            <div class="book-cover-inner">
+              <span style="font-size:2.5rem;display:block;margin-bottom:0.5rem;opacity:0.75;">🌿</span>
+              <span style="font-family:'Cinzel',serif;font-size:0.5rem;letter-spacing:0.4em;color:#3a7a20;text-transform:uppercase;display:block;margin-bottom:0.6rem;">Aboriginal Indigenous</span>
+              <span style="font-family:'Uncial Antiqua',serif;font-size:1rem;color:#80c040;line-height:1.3;display:block;">Root Medicine:<br>Plant Healing<br>for Families</span>
+              <div style="width:40px;height:1px;background:#3a7a20;margin:0.8rem auto;"></div>
+              <span style="font-family:'Cinzel',serif;font-size:0.48rem;letter-spacing:0.25em;color:#2a5a10;text-transform:uppercase;">The 3313 Collective</span>
+            </div>
+            <div class="book-audio-badge" style="background:rgba(50,110,20,0.9);color:#e0f8d0;">🔊 Audio</div>
+          </div>
+          <div class="book-info">
+            <span class="book-tag">Plant Medicine · Healing · Families · Aboriginal</span>
+            <h3 class="book-title" style="color:#80c040;">Root Medicine: Plant Healing for Aboriginal Families</h3>
+            <p class="book-desc">The complete healing that grows in your own yard. Drawn from Jamaican Maroon herbal tradition, TasKiGi Creek plant knowledge, and the 20 sacred healing herbs documented by the Jamaica College of Wellness — this guide teaches families how to return to the medicine their ancestors carried. Every cure was always already growing beside the house.</p>
+            <div class="book-details">
+              <span>📖 For Families</span>
+              <span>🎧 Full Audio</span>
+              <span>🌿 20 Sacred Herbs</span>
+            </div>
+            <div class="book-donate-row">
+              <span style="font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.2em;color:var(--ochre-dim);text-transform:uppercase;">Suggested Gift</span>
+              <div style="display:flex;gap:0.5rem;margin-top:0.5rem;flex-wrap:wrap;">
+                <button class="mini-amt" onclick="triggerDonate(this,'$11','Root Medicine')">$11</button>
+                <button class="mini-amt active" onclick="triggerDonate(this,'$22','Root Medicine')">$22</button>
+                <button class="mini-amt" onclick="triggerDonate(this,'$33','Root Medicine')">$33</button>
+                <button class="mini-amt" onclick="triggerDonate(this,'Give freely','Root Medicine')">Gift freely</button>
+              </div>
+              <button class="book-btn" onclick="openBook('Root Medicine: Plant Healing for Aboriginal Families')">🌿 &nbsp; Receive This Audio</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- BOOKSTORE NOTE -->
+    <div style="margin-top:4rem;padding:2rem;border:1px solid rgba(200,130,42,0.15);background:rgba(0,0,0,0.4);text-align:center;">
+      <span style="font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.4em;color:var(--ochre-dim);text-transform:uppercase;display:block;margin-bottom:1rem;">Sacred Covenant of the Bookstore</span>
+      <p style="max-width:600px;margin:0 auto;font-style:italic;color:#a89870;font-size:0.95rem;line-height:1.8;">These teachings were given to us by the Ancestors. They do not belong to any individual or institution. Your donation sustains the Circle — paying for hosting, production, and free distribution to incarcerated individuals and communities who cannot pay. If you cannot give, receive freely and pass the teaching on. <strong style="color:var(--ochre-bright);">That is the only payment we ask.</strong></p>
+    </div>
+
+  </div>
+</section>
+
+<!-- BOOKSTORE MODAL -->
+<div id="book-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:500;align-items:center;justify-content:center;padding:2rem;">
+  <div style="background:var(--deep-soil);border:1px solid rgba(200,130,42,0.3);max-width:480px;width:100%;padding:3rem;position:relative;text-align:center;">
+    <button onclick="closeModal()" style="position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--papyrus-dim);font-size:1.2rem;cursor:pointer;">✕</button>
+    <span style="font-size:2rem;display:block;margin-bottom:1rem;">𓋹</span>
+    <h3 id="modal-title" style="font-family:'Uncial Antiqua',serif;color:var(--ochre-bright);font-size:1.2rem;margin-bottom:1rem;"></h3>
+    <p style="color:#a89870;font-size:0.9rem;margin-bottom:2rem;line-height:1.7;">This audiobook is yours by sacred covenant. Give what your spirit leads — or receive freely. Your donation supports free distribution to those who cannot pay.</p>
+    <div style="display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem;">
+      <button class="mini-amt" onclick="setModalAmt('$11')">$11</button>
+      <button class="mini-amt active" onclick="setModalAmt('$22')">$22</button>
+      <button class="mini-amt" onclick="setModalAmt('$33')">$33</button>
+      <button class="mini-amt" onclick="setModalAmt('$0 — Gift freely')">Receive freely</button>
+    </div>
+    <input type="email" placeholder="Email for delivery" class="donate-input" style="width:100%;margin-bottom:1rem;"/>
+    <button class="btn-primary" style="width:100%;padding:1rem;" onclick="completeBookDonate()">Complete Sacred Gift & Receive Audio</button>
+    <p style="margin-top:1rem;font-size:0.75rem;color:#5a4a30;font-style:italic;">501(c)(3) tax-deductible · Ecclesiastical Trust protected · The 3313 Collective</p>
+  </div>
+</div>
+
+<!-- DONATE -->
+<section id="donate">
+  <div class="container">
+    <div class="donate-inner">
+      <span class="section-eyebrow center">Sacred Stewardship</span>
+      <h2 class="section-title center">Give to the Circle</h2>
+      <div class="ochre-rule" style="margin:1rem auto 2rem;"></div>
+
+      <p style="text-align:center;">Umayat Spiritual Education Circle for Self Realization is a federally recognized 501(c)(3) nonprofit organization. All gifts are tax-deductible. Your generosity funds free teachings for incarcerated individuals, indigenous communities, and all seekers who cannot pay.</p>
+
+      <span class="donate-503" style="margin-top:1.5rem;">501(c)(3) · Protected by the Ecclesiastical Trust · The 3313 Collective</span>
+
+      <div class="donate-amounts">
+        <button class="amt-btn" onclick="setAmt(this,'$11')">$11</button>
+        <button class="amt-btn active" onclick="setAmt(this,'$33')">$33</button>
+        <button class="amt-btn" onclick="setAmt(this,'$77')">$77</button>
+        <button class="amt-btn" onclick="setAmt(this,'$111')">$111</button>
+        <button class="amt-btn" onclick="setAmt(this,'Other')">Other</button>
+      </div>
+
+      <div class="donate-form">
+        <input type="text" class="donate-input" placeholder="Full Name" />
+        <input type="email" class="donate-input" placeholder="Email Address" />
+        <input type="text" id="amt-field" class="donate-input" value="$33 — Monthly Giving" />
+        <button class="btn-primary" style="width:100%;padding:1rem;font-size:0.75rem;cursor:pointer;">
+          𓋹 &nbsp; Complete Sacred Gift
+        </button>
+      </div>
+
+      <p class="donate-note">Donations processed securely. Receipts issued for all tax-deductible contributions. No seeker is turned away — if you cannot give, receive freely.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="kmt-border-top"></div>
+<footer>
+  <span class="footer-ankh">𓋹</span>
+  <span class="footer-name">Umayat Spiritual Education Circle</span>
+  <span class="footer-sub">For Self Realization · Aboriginal Indigenous · Kemetic</span>
+  <span class="footer-sub" style="margin-top:0.3rem;">The 3313 Collective · Protected by the Ecclesiastical Trust</span>
+  <div class="kmt-rule" style="margin:1.5rem auto;width:200px;">
+    <div class="kmt-rule-line"></div>
+    <span class="kmt-rule-symbol">𓂀</span>
+    <div class="kmt-rule-line r"></div>
+  </div>
+  <p class="footer-copy">501(c)(3) Tax-Exempt Nonprofit Organization · All teachings offered in sacred covenant with the ancestors · All rights protected</p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function setAmt(btn, val) {
+  document.querySelectorAll('.amt-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const field = document.getElementById('amt-field');
+  if (val === 'Other') {
+    field.value = '';
+    field.placeholder = 'Enter your amount';
+    field.focus();
+  } else {
+    field.value = val + ' — Sacred Gift';
+  }
+}
+
+let currentBook = '';
+let currentAmt = '$22';
+
+function triggerDonate(btn, amt, book) {
+  btn.closest('.book-donate-row').querySelectorAll('.mini-amt').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  currentAmt = amt;
+  currentBook = book;
+}
+
+function openBook(title) {
+  currentBook = title;
+  document.getElementById('modal-title').textContent = title;
+  const modal = document.getElementById('book-modal');
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('book-modal').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+function setModalAmt(amt) {
+  document.querySelectorAll('#book-modal .mini-amt').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  currentAmt = amt;
+}
+
+function completeBookDonate() {
+  const email = document.querySelector('#book-modal input[type="email"]').value;
+  if (!email) {
+    alert('Please enter your email so we can deliver your audio.');
+    return;
+  }
+  closeModal();
+  setTimeout(() => {
+    alert('Sacred gift received. \n\nThank you for your generosity.\n\nYour audio for "' + currentBook + '" will be sent to ' + email + ' within 24 hours by the Circle.\n\nΩ — Ω — Ω');
+  }, 300);
+}
+
+// Close modal on backdro
