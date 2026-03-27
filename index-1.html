@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jamaica College of Wellness — Certificate Courses</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Jost:wght@300;400;500;600;700&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --earth: #1a1208;
+  --deep-forest: #0e2016;
+  --forest: #1b3a25;
+  --forest-mid: #2a5538;
+  --leaf: #3d7a52;
+  --sage: #7aab8a;
+  --gold: #c9893a;
+  --gold-light: #e8b860;
+  --gold-pale: #f5d990;
+  --cream: #faf5e8;
+  --warm: #f2e8d0;
+  --amber: #d4880a;
+  --crimson: #7a1f2e;
+  --muted: #8a7a62;
+  --text: #1a1208;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Jost', sans-serif;
+  background: var(--earth);
+  color: var(--cream);
+  overflow-x: hidden;
+}
+
+/* ── NOISE TEXTURE OVERLAY ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.35;
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  background: 
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(61,122,82,0.18) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 20% 80%, rgba(201,137,58,0.12) 0%, transparent 60%),
+    linear-gradient(180deg, #0a1a0d 0%, #1a1208 40%, #0e0c06 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 24px 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold), var(--gold-pale), var(--gold), transparent);
+}
+
+.hero-emblem {
+  font-size: 3.8rem;
+  margin-bottom: 20px;
+  animation: float 6s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(201,137,58,0.4));
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.institution-name {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(0.6rem, 1.5vw, 0.8rem);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 18px;
+  opacity: 0.85;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--cream);
+  margin-bottom: 12px;
+  text-shadow: 0 2px 40px rgba(0,0,0,0.6);
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold-light);
+  display: block;
+}
+
+.hero-verse {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+  color: rgba(250,245,232,0.7);
+  max-width: 680px;
+  line-height: 1.75;
+  margin: 20px auto 36px;
+}
+
+.hero-verse strong {
+  color: var(--gold-pale);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 42px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  display: block;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(250,245,232,0.5);
+  margin-top: 4px;
+}
+
+.cta-primary {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--gold), var(--amber));
+  color: var(--earth);
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 18px 44px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  box-shadow: 0 6px 30px rgba(201,137,58,0.35);
+}
+
+.cta-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 40px rgba(201,137,58,0.5);
+}
+
+/* ── DIVIDER ── */
+.divider-ornament {
+  text-align: center;
+  padding: 24px 0;
+  color: var(--gold);
+  font-size: 1.1rem;
+  letter-spacing: 16px;
+  opacity: 0.5;
+}
+
+/* ── MANDATE SECTION ── */
+.mandate {
+  background: linear-gradient(180deg, #0e0c06, var(--deep-forest));
+  padding: 80px 24px;
+  text-align: center;
+  position: relative;
+}
+
+.mandate::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 10%; right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,137,58,0.3), transparent);
+}
+
+.section-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+  opacity: 0.8;
+}
+
+.mandate h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  color: var(--cream);
+  margin-bottom: 20px;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.2;
+}
+
+.mandate h2 em {
+  color: var(--gold-light);
+  font-style: italic;
+}
+
+.mandate-body {
+  font-size: 1.05rem;
+  color: rgba(250,245,232,0.65);
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.85;
+}
+
+.mandate-body strong {
+  color: var(--sage);
+  font-weight: 600;
+}
+
+/* ── PILLARS ── */
+.pillars {
+  background: var(--deep-forest);
+  padding: 80px 24px;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 2px;
+  max-width: 1100px;
+  margin: 48px auto 0;
+  border: 1px solid rgba(201,137,58,0.15);
+}
+
+.pillar {
+  background: rgba(27,58,37,0.4);
+  padding: 36px 28px;
+  border-right: 1px solid rgba(201,137,58,0.1);
+  transition: background 0.3s;
+}
+
+.pillar:last-child { border-right: none; }
+.pillar:hover { background: rgba(61,122,82,0.25); }
+
+.pillar-icon { font-size: 2rem; margin-bottom: 14px; }
+.pillar-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  margin-bottom: 8px;
+}
+.pillar-text {
+  font-size: 0.82rem;
+  color: rgba(250,245,232,0.6);
+  line-height: 1.7;
+}
+
+/* ── COURSES ── */
+.courses {
+  background: linear-gradient(180deg, var(--deep-forest), #0a1208);
+  padding: 80px 24px 100px;
+}
+
+.courses-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 60px;
+}
+
+.courses-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+
+.courses-header p {
+  font-size: 1rem;
+  color: rgba(250,245,232,0.6);
+  line-height: 1.75;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* ── COURSE CARD ── */
+.course-card {
+  border: 1px solid rgba(201,137,58,0.18);
+  border-radius: 2px;
+  overflow: hidden;
+  background: linear-gradient(160deg, rgba(27,58,37,0.5), rgba(10,18,8,0.9));
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.course-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.course-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+}
+
+.card-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--crimson);
+  color: var(--cream);
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 2px;
+}
+
+.card-badge.green { background: var(--forest-mid); }
+.card-badge.gold { background: rgba(201,137,58,0.9); color: var(--earth); }
+
+.card-header {
+  padding: 30px 28px 20px;
+  border-bottom: 1px solid rgba(201,137,58,0.12);
+}
+
+.card-icon { font-size: 2.4rem; margin-bottom: 14px; display: block; }
+
+.card-track {
+  font-size: 0.58rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.card-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--gold-light);
+  line-height: 1.4;
+}
+
+.card-body { padding: 22px 28px; }
+
+.card-verse {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: rgba(250,245,232,0.55);
+  line-height: 1.65;
+  margin-bottom: 18px;
+  padding-left: 14px;
+  border-left: 2px solid rgba(201,137,58,0.35);
+}
+
+.modules-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.module-list {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.module-list li {
+  font-size: 0.82rem;
+  color: rgba(250,245,232,0.72);
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  line-height: 1.45;
+}
+
+.module-list li::before {
+  content: '✦';
+  color: var(--gold);
+  font-size: 0.55rem;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.module-list li:last-child { border-bottom: none; }
+
+.earn-box {
+  background: rgba(201,137,58,0.08);
+  border: 1px solid rgba(201,137,58,0.2);
+  border-radius: 2px;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+}
+
+.earn-box-title {
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.earn-box-text {
+  font-size: 0.82rem;
+  color: rgba(250,245,232,0.75);
+  line-height: 1.6;
+}
+
+.card-footer {
+  padding: 18px 28px 26px;
+  border-top: 1px solid rgba(201,137,58,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.price-wrap .price-label {
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(250,245,232,0.4);
+  display: block;
+}
+
+.price-wrap .price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--gold-light);
+}
+
+.price-wrap .price-sub {
+  font-size: 0.7rem;
+  color: rgba(250,245,232,0.4);
+  margin-top: 2px;
+}
+
+.enroll-btn {
+  background: linear-gradient(135deg, var(--forest-mid), var(--leaf));
+  color: var(--cream);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 12px 22px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s;
+  text-decoration: none;
+  display: inline-block;
+  clip-path: polygon(5px 0%, 100% 0%, calc(100% - 5px) 100%, 0% 100%);
+}
+
+.enroll-btn:hover {
+  background: linear-gradient(135deg, var(--leaf), #4a9465);
+  box-shadow: 0 4px 20px rgba(61,122,82,0.4);
+}
+
+/* ── CERTIFICATE STRIP ── */
+.cert-strip {
+  background: linear-gradient(90deg, var(--forest), var(--forest-mid), var(--forest));
+  padding: 48px 24px;
+  text-align: center;
+  border-top: 1px solid rgba(201,137,58,0.2);
+  border-bottom: 1px solid rgba(201,137,58,0.2);
+}
+
+.cert-strip h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: var(--cream);
+  margin-bottom: 10px;
+}
+
+.cert-strip p {
+  font-size: 0.9rem;
+  color: rgba(250,245,232,0.65);
+  max-width: 580px;
+  margin: 0 auto 28px;
+  line-height: 1.75;
+}
+
+.cert-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+.cert-badge {
+  border: 1px solid rgba(201,137,58,0.4);
+  padding: 9px 18px;
+  font-size: 0.72rem;
+  color: var(--gold-light);
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+/* ── TESTIMONIAL ── */
+.testimony {
+  background: #080d08;
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.testimony-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-style: italic;
+  color: var(--cream);
+  max-width: 800px;
+  margin: 0 auto 24px;
+  line-height: 1.55;
+}
+
+.testimony-attr {
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ── ENROLL CTA ── */
+.enroll-cta {
+  background: 
+    radial-gradient(ellipse 60% 50% at 50% 100%, rgba(61,122,82,0.2), transparent),
+    linear-gradient(180deg, #0a1208, var(--deep-forest));
+  padding: 100px 24px;
+  text-align: center;
+}
+
+.enroll-cta h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 14px;
+  line-height: 1.1;
+}
+
+.enroll-cta h2 em { color: var(--gold-light); font-style: italic; }
+
+.enroll-cta p {
+  font-size: 1rem;
+  color: rgba(250,245,232,0.6);
+  max-width: 560px;
+  margin: 0 auto 40px;
+  line-height: 1.8;
+}
+
+.cta-row {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.cta-secondary {
+  display: inline-block;
+  border: 1px solid rgba(201,137,58,0.5);
+  color: var(--gold-light);
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.cta-secondary:hover {
+  background: rgba(201,137,58,0.1);
+  border-color: var(--gold);
+}
+
+.trust-row {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.trust-item {
+  font-size: 0.72rem;
+  color: rgba(250,245,232,0.35);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: #050805;
+  padding: 40px 24px;
+  text-align: center;
+  border-top: 1px solid rgba(201,137,58,0.1);
+}
+
+footer p {
+  font-size: 0.72rem;
+  color: rgba(250,245,232,0.25);
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+footer .footer-name {
+  font-family: 'Cinzel', serif;
+  color: rgba(201,137,58,0.5);
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero > * {
+  animation: fadeUp 0.8s ease both;
+}
+.hero > *:nth-child(1) { animation-delay: 0.1s; }
+.hero > *:nth-child(2) { animation-delay: 0.2s; }
+.hero > *:nth-child(3) { animation-delay: 0.3s; }
+.hero > *:nth-child(4) { animation-delay: 0.4s; }
+.hero > *:nth-child(5) { animation-delay: 0.5s; }
+.hero > *:nth-child(6) { animation-delay: 0.6s; }
+.hero > *:nth-child(7) { animation-delay: 0.7s; }
+
+/* ── SCROLL REVEAL ── */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s, transform 0.7s; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── SOVEREIGN BANNER ── */
+.sovereign-bar {
+  background: linear-gradient(90deg, rgba(10,18,8,0.98), rgba(27,58,37,0.98));
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  color: rgba(250,245,232,0.4);
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(201,137,58,0.15);
+}
+
+.sovereign-bar span { color: var(--gold); }
+
+/* ── FEATURED HIGHLIGHT ── */
+.featured { position: relative; }
+.featured::after {
+  content: '⭐ FEATURED';
+  position: absolute;
+  top: -1px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: var(--earth);
+  font-size: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  padding: 3px 14px;
+  white-space: nowrap;
+}
+</style>
+</head>
+<body>
+
+<!-- SOVEREIGN BAR -->
+<div class="sovereign-bar">
+  <span>Jamaica College of Wellness</span> &nbsp;·&nbsp; Under the Sovereign Government of TasKiGi Creek Territory Nation State &nbsp;·&nbsp; <span>Bath Botanical Gardens · St. Thomas Parish · Jamaica</span>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-emblem">🌿</div>
+  <div class="institution-name">Jamaica College of Wellness — Certificate Programmes</div>
+  <h1>The Ancestors Put the<br><em>Medicine in the Land.</em><br>We Teach You to Find It.</h1>
+  <p class="hero-verse">
+    You were born into one of the most medically rich ecosystems on earth. Every bush, every root, every seed in your yard carries a healing story older than any pharmacy. This College exists to give you the <strong>science, the sovereignty, and the skills</strong> to turn that ancient inheritance into your life's work.
+  </p>
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="stat-num">4</span>
+      <span class="stat-label">Certificate Tracks</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">22+</span>
+      <span class="stat-label">Years of Practice</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">100%</span>
+      <span class="stat-label">Earn While You Learn</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">∞</span>
+      <span class="stat-label">Ancestral Knowledge</span>
+    </div>
+  </div>
+  <a href="#courses" class="cta-primary">Begin Your Healing Education →</a>
+</section>
+
+<!-- MANDATE -->
+<section class="mandate">
+  <div class="section-eyebrow">Our Sacred Mandate</div>
+  <h2>You Are Not Starting From Zero.<br>You Are Starting From <em>Lineage.</em></h2>
+  <div class="divider-ornament">✦ ✦ ✦</div>
+  <p class="mandate-body">
+    For too long, the knowledge your grandmothers kept alive in the kitchen, the garden, and the hills of St. Thomas has been called "folk medicine" — as if it needed permission from a laboratory to be real. <strong>It does not.</strong><br><br>
+    The ancient Kemetic physicians of Kemet — the civilization the world now calls Egypt — understood that healing was a sacred science. That Ma'at, the principle of truth and cosmic order, was the foundation of every cure. That the healer's first obligation was to the <em>whole person:</em> body, spirit, and lineage. <strong>That knowledge did not die. It traveled. It is here, in these hills, in your hands, in the yard outside your door.</strong><br><br>
+    The Jamaica College of Wellness was built to restore what colonialism tried to erase: the understanding that the earth is your first teacher, your first pharmacy, and your first economy. These courses do not simply teach you facts. They initiate you into a living Kemetic and Aboriginal tradition — one that can feed your family, heal your community, and generate dignified income from Day One.
+  </p>
+</section>
+
+<!-- PILLARS -->
+<section class="pillars">
+  <div style="text-align:center;margin-bottom:10px">
+    <div class="section-eyebrow">What We Stand On</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.6rem);color:var(--cream);max-width:600px;margin:0 auto">Four Pillars of Sovereign Wellness Education</h2>
+  </div>
+  <div class="pillars-grid">
+    <div class="pillar">
+      <div class="pillar-icon">𓂀</div>
+      <div class="pillar-title">Kemetic Roots</div>
+      <div class="pillar-text">Ma'at, Imhotep, and the 42 Laws of Right Living form the philosophical spine of our healing education. The oldest medical tradition on earth is yours.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">🌱</div>
+      <div class="pillar-title">Land as Curriculum</div>
+      <div class="pillar-text">Nature is not a setting. It is the teacher. Every course grounds itself in the living knowledge of plants, soil, and season.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">⚖️</div>
+      <div class="pillar-title">Rights as Foundation</div>
+      <div class="pillar-text">Your right to heal yourself and your community is inalienable. We teach wellness as a human rights framework — not a luxury.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">💰</div>
+      <div class="pillar-title">Earn While You Learn</div>
+      <div class="pillar-text">Every certificate is built to generate income immediately. Knowledge that cannot feed you is incomplete.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">🔥</div>
+      <div class="pillar-title">Ancestral Authority</div>
+      <div class="pillar-text">You are not a student borrowing from a foreign tradition. You are a descendant reclaiming what has always been yours.</div>
+    </div>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section class="courses" id="courses">
+  <div class="courses-header">
+    <div class="section-eyebrow">Certificate Programmes — Enroll Today</div>
+    <h2>Choose Your Path.<br>Begin Your Calling.</h2>
+    <p>All courses are delivered online with hands-on practicum components. Each certificate is designed so you can begin serving clients and generating income before you complete your final module.</p>
+  </div>
+
+  <div class="course-grid">
+
+    <!-- COURSE 1 -->
+    <div class="course-card featured">
+      <div class="card-badge gold">Most Popular</div>
+      <div class="card-header">
+        <span class="card-icon">🌿</span>
+        <div class="card-track">Certificate I — Foundation Track</div>
+        <div class="card-title">Nature Wellness Practitioner</div>
+        <div class="card-subtitle">The Sacred Art of Jamaican Plant Healing</div>
+      </div>
+      <div class="card-body">
+        <p class="card-verse">"Before your grandmother could read, she could heal. She walked through the yard and knew which leaf to press, which root to boil, which tea would bring a fever down by morning. This is your inheritance. We teach you to carry it forward with skill and confidence."</p>
+        <div class="modules-label">✦ Course Modules</div>
+        <ul class="module-list">
+          <li>The 20 Sacred Herbs of Jamaica — identity, preparation, dosage, safety</li>
+          <li>Reading the body: how to assess and match herb to condition</li>
+          <li>Jamaican Maroon healing tradition & Aboriginal plant medicine philosophy</li>
+          <li>Making teas, tinctures, poultices, oils, and salves with confidence</li>
+          <li>Bush medicine for chronic conditions: blood pressure, diabetes, digestion</li>
+          <li>Women's health herbalism — fertility, menopause, postpartum</li>
+          <li>Building a home apothecary from your yard and local market</li>
+          <li>Safety, contraindications, and when to refer</li>
+          <li>Practicum: 10 case studies from real community clients</li>
+        </ul>
+        <div class="earn-box">
+          <div class="earn-box-title">💚 How You Earn from Day One</div>
+          <div class="earn-box-text">From Module 2, you can begin selling hand-crafted herbal teas, tinctures, and wellness kits. Graduate with a portfolio of products and a client list. Many students begin earning before Module 5.</div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="price-wrap">
+          <span class="price-label">Investment</span>
+          <span class="price">J$18,500</span>
+          <div class="price-sub">or J$5,000 × 4 months · PDF textbook included</div>
+        </div>
+        <a href="#enroll" class="enroll-btn">Enroll Now →</a>
+      </div>
+    </div>
+
+    <!-- COURSE 2 -->
+    <div class="course-card">
+      <div class="card-badge green">New Course</div>
+      <div class="card-header">
+        <span class="card-icon">🌬️</span>
+        <div class="card-track">Certificate II — Sovereignty Track</div>
+        <div class="card-title">Medical Cannabis: Human Rights, Business & Healing</div>
+        <div class="card-subtitle">From Sacred Plant to Sovereign Enterprise</div>
+      </div>
+      <div class="card-body">
+        <p class="card-verse">"Queen Nanny kept knowledge alive in the mountains that colonial law tried to kill. The cannabis plant has been medicinal in these hills for centuries — long before any government gave it permission. Your right to this knowledge is older than any act of parliament."</p>
+        <div class="modules-label">✦ Course Modules</div>
+        <ul class="module-list">
+          <li>Cannabis as ancestral medicine: Jamaican, African, and Maroon history</li>
+          <li>The endocannabinoid system — science in plain language</li>
+          <li>Medical cannabis as a human right: UNDRIP, international law & Jamaica's framework</li>
+          <li>Jamaica's Dangerous Drugs (Amendment) Act 2015 — what it means for you</li>
+          <li>Licensed cultivation, processing, and compliance for small producers</li>
+          <li>Building a cannabis wellness business: dispensary, spa, consulting, products</li>
+          <li>Sourcing, testing, and quality control — protecting your clients</li>
+          <li>Conditions that respond to cannabis: pain, anxiety, epilepsy, cancer support</li>
+          <li>Community cannabis advocacy: speaking at parish councils and policy tables</li>
+          <li>Practicum: business plan and licensing roadmap for your enterprise</li>
+        </ul>
+        <div class="earn-box">
+          <div class="earn-box-title">💚 How You Earn from Day One</div>
+          <div class="earn-box-text">Begin offering cannabis wellness consultations, compliance coaching to other small growers, and community education workshops. Graduates are equipped to apply for a personal cultivation licence and begin their licensed enterprise.</div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="price-wrap">
+          <span class="price-label">Investment</span>
+          <span class="price">J$22,000</span>
+          <div class="price-sub">or J$6,000 × 4 months · Legal guide included</div>
+        </div>
+        <a href="#enroll" class="enroll-btn">Enroll Now →</a>
+      </div>
+    </div>
+
+    <!-- COURSE 3 -->
+    <div class="course-card">
+      <div class="card-header">
+        <span class="card-icon">🕯️</span>
+        <div class="card-track">Certificate III — Spirit Track</div>
+        <div class="card-title">Spirituality, Plant Medicine & the Sacred Body</div>
+        <div class="card-subtitle">Healing the Whole Person — Spirit, Mind, Flesh, and Lineage</div>
+      </div>
+      <div class="card-body">
+        <p class="card-verse">"The ancient Kemetic physicians understood: Ma'at — truth, order, and right living — was the foundation of all health. Sickness was not merely a malfunction of the body. It was a misalignment of the soul. Your ancestors on the Nile knew what your grandmothers in the hills of St. Thomas also knew. This course restores the unbroken thread between them."</p>
+        <div class="modules-label">✦ Course Modules</div>
+        <ul class="module-list">
+          <li>Kemetic medicine and the origins of holistic healing — Imhotep, the 42 Laws of Ma'at, and the philosophy of wholeness</li>
+          <li>The Kemetic healing archetypes — Sekhmet the transformer, Thoth the keeper of wisdom, Isis the restorer</li>
+          <li>The spiritual dimensions of plant medicine in Maroon, Aboriginal, and Kemetic tradition</li>
+          <li>Somatic healing: how trauma lives in the body and how plants and breath help release it</li>
+          <li>Breathwork, yoga therapy, and Kemetic movement practice as medicine</li>
+          <li>Ancestral healing protocols: grief, intergenerational trauma, and spiritual disconnection</li>
+          <li>Sacred ritual in the healing session: Kemetic prayer, intention, altar work, and ceremony</li>
+          <li>Cannabis and spirituality — ceremonial use, Kemetic cosmological framework, and ethics</li>
+          <li>Designing a spiritual wellness practice rooted in Kemetic philosophy: retreats, rites of passage, group healing circles</li>
+          <li>Practicum: lead two community healing circles grounded in Kemetic principles and document outcomes</li>
+        </ul>
+        <div class="earn-box">
+          <div class="earn-box-title">💚 How You Earn from Day One</div>
+          <div class="earn-box-text">Offer spiritual wellness sessions, lead healing circles, design retreats, and serve as a ceremony facilitator. Graduates build practices serving diaspora clients, resort partnerships, and local communities.</div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="price-wrap">
+          <span class="price-label">Investment</span>
+          <span class="price">J$20,000</span>
+          <div class="price-sub">or J$5,500 × 4 months</div>
+        </div>
+        <a href="#enroll" class="enroll-btn">Enroll Now →</a>
+      </div>
+    </div>
+
+    <!-- COURSE 4 -->
+    <div class="course-card">
+      <div class="card-badge">New</div>
+      <div class="card-header">
+        <span class="card-icon">🍃</span>
+        <div class="card-track">Certificate IV — Nourishment Track</div>
+        <div class="card-title">The Healing Chef: Cannabis Cuisine & Functional Foods</div>
+        <div class="card-subtitle">Food as Medicine — The Jamaican Kitchen Reawakened</div>
+      </div>
+      <div class="card-body">
+        <p class="card-verse">"The Jamaican kitchen has always been a pharmacy. Moringa in the pot. Callaloo on the stove. Ginger in everything. Breadfruit from the tree to the fire. Your ancestors cooked medicine into every meal, and it is time for the world to pay for what they knew."</p>
+        <div class="modules-label">✦ Course Modules</div>
+        <ul class="module-list">
+          <li>Functional foods of Jamaica: moringa, cerasee, breadfruit, callaloo, jackfruit, soursop</li>
+          <li>Cannabis-infused cooking: decarboxylation, dosing, infusion methods, safety</li>
+          <li>Legal framework for cannabis edibles in Jamaica — what is permitted</li>
+          <li>Designing therapeutic menus for chronic illness, detox, and immune support</li>
+          <li>Raw living foods and plant-based healing cuisine</li>
+          <li>Fermentation, preservation, and building a healing pantry</li>
+          <li>Building a healing food business: private cheffing, wellness retreats, pop-ups</li>
+          <li>Food photography and branding for social media income</li>
+          <li>Nutrient science in plain language — why these foods work</li>
+          <li>Practicum: design and execute a 7-day therapeutic meal plan for a real client</li>
+        </ul>
+        <div class="earn-box">
+          <div class="earn-box-title">💚 How You Earn from Day One</div>
+          <div class="earn-box-text">Begin taking private chef bookings, selling infused wellness products at markets, and partnering with yoga studios and retreats from Module 3. Graduates have launched catering businesses, wellness lunch delivery services, and resort wellness programmes.</div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="price-wrap">
+          <span class="price-label">Investment</span>
+          <span class="price">J$19,500</span>
+          <div class="price-sub">or J$5,200 × 4 months · Recipe book included</div>
+        </div>
+        <a href="#enroll" class="enroll-btn">Enroll Now →</a>
+      </div>
+    </div>
+
+  </div><!-- end course-grid -->
+
+  <!-- BUNDLE BOX -->
+  <div style="max-width:760px;margin:48px auto 0;border:1px solid rgba(201,137,58,0.3);padding:40px;text-align:center;background:rgba(27,58,37,0.25);">
+    <div style="font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;font-weight:700">⭐ Full Wellness Practitioner Bundle</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,4vw,2.4rem);color:var(--cream);margin-bottom:10px;font-weight:700">All Four Certificates — <em style="color:var(--gold-light)">One Sovereign Education</em></div>
+    <p style="font-size:0.9rem;color:rgba(250,245,232,0.6);max-width:500px;margin:0 auto 24px;line-height:1.75">Become a complete Jamaican Wellness Practitioner — certified in nature medicine, cannabis wellness, spiritual healing, and therapeutic cuisine. This is the full circle of ancestral knowledge, restored.</p>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;color:var(--gold-light);margin-bottom:6px">J$58,000 <span style="font-size:1rem;color:rgba(250,245,232,0.4);text-decoration:line-through">J$80,000</span></div>
+    <div style="font-size:0.75rem;color:rgba(250,245,232,0.45);margin-bottom:24px">Save J$22,000 · All four PDF textbooks · Priority mentor access · Lifetime course updates</div>
+    <a href="#enroll" class="cta-primary">Claim the Full Bundle — Save 27% →</a>
+  </div>
+
+</section>
+
+<!-- CERTIFICATE STRIP -->
+<div class="cert-strip">
+  <h3>Your Certificate Is Earned. Not Given.</h3>
+  <p>Every Jamaica College of Wellness Certificate represents demonstrated competency — real case studies, community practice, and a practicum reviewed by faculty. When you hold this certificate, you hold proof of work.</p>
+  <div class="cert-badges">
+    <div class="cert-badge">🌿 Issued by Jamaica College of Wellness</div>
+    <div class="cert-badge">⚖️ Under TasKiGi Creek Sovereign Authority</div>
+    <div class="cert-badge">📜 Lifetime Digital Verification</div>
+    <div class="cert-badge">🔄 Annual CPD Updates Included</div>
+    <div class="cert-badge">💼 Business Launchpad Included</div>
+  </div>
+</div>
+
+<!-- TESTIMONY -->
+<div class="testimony">
+  <div class="divider-ornament">✦</div>
+  <blockquote class="testimony-quote">
+    "The herbs were always there. The knowledge was always in the family. What I needed was the confidence, the science, and the certificate that told the world — and told myself — that what I carry is real, and it is worth paying for."
+  </blockquote>
+  <div class="testimony-attr">Graduate · Nature Wellness Practitioner Certificate · St. Thomas Parish, Jamaica</div>
+  <div class="divider-ornament" style="margin-top:32px">✦</div>
+</div>
+
+<!-- ENROLL CTA -->
+<section class="enroll-cta" id="enroll">
+  <div class="section-eyebrow">Your Next Step</div>
+  <h2>The Bush Has Been Waiting.<br><em>So Have You.</em></h2>
+  <p>Enroll today and receive your welcome packet within 24 hours — including your first module, your course textbook, and your Sacred Herb Handbook™ PDF (J$5,800 value), included free with every certificate registration.</p>
+  <div class="cta-row">
+    <a href="https://signal.me/#p/+18763221846" class="cta-primary" target="_blank">📲 Enroll via Signal Now →</a>
+    <a href="/cdn-cgi/l/email-protection#5e373038311e343f333f373d3f3d3132323b393b3138293b3232303b2d2d703d3133" class="cta-secondary">📧 Email Us to Enroll</a>
+  </div>
+  <div style="text-align:center;margin-top:14px;font-size:.72rem;color:#888;line-height:1.6">
+    JCW communicates via <strong>Signal</strong> — end-to-end encrypted. Download free at 
+    <a href="https://signal.org/download" target="_blank" style="color:#2a64b4;font-weight:600">signal.org</a>
+  </div>
+  <div class="trust-row">
+    <div class="trust-item">✦ Pay on Delivery Options</div>
+    <div class="trust-item">✦ Monthly Payment Plans</div>
+    <div class="trust-item">✦ Scholarship Applications Available</div>
+    <div class="trust-item">✦ Group Enrolment Discounts</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name">Jamaica College of Wellness</div>
+  <p>
+    Sovereign Government of TasKiGi Creek Territory Nation State &nbsp;·&nbsp; 98 Special Needs Trust<br>
+    Nanny Centre for Musa-Silk · Bath Botanical Gardens · Rockbrook, St. Thomas Parish, Jamaica<br><br>
+    All courses are for educational purposes. Graduates should consult appropriate legal counsel before establishing medical or cannabis businesses. Cannabis cultivation and dispensing requires proper licensing under Jamaican law.<br><br>
+    © 2025 Jamaica College of Wellness. All Rights Reserved.
+  </p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries => {
+  entries.forEa
